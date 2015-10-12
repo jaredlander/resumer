@@ -1,0 +1,30 @@
+\documentclass{article}
+%\documentclass{resumer}
+
+\usepackage{parskip} % Remove paragraph indentation
+\pagestyle{empty} % Suppress page numbers
+\RequirePackage{titlesec}   % for formatting sections
+
+\makeatletter
+\renewcommand{\subsection}[4]{\textbf{#1} \hfill #2 \\ \emph{#3} \hfill #4\smallskip}
+\makeatother
+
+\makeatletter
+\renewcommand{\section}[1]{\underline{#1}\\}
+\makeatother
+
+
+\begin{document}
+
+\section{Relevant Experience}
+\subsection{Columbia University}{2012--Present}{Adjunct Professor}{New York, NY}
+\begin{itemize}
+\item Designed a lab to teach computational statististics to data science students
+\item Taught two sections a week to students from stats, journalism, business \& sociology departments
+\item Covered basic programming, modelling, data manipulation, machine learning, visualization and communication
+\end{itemize}
+
+% \section{Work}
+%\subsection{ABC Limited.}
+
+\end{document} 

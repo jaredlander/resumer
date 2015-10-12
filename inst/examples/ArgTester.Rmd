@@ -1,0 +1,28 @@
+---
+title: "Arg Tester"
+author: "Jared P. Lander"
+date: "October 10, 2015"
+output: 
+  ioslides_presentation:
+    self_contained: no
+    pandoc_args: [
+      "--title-prefix", "Foo",
+      "--id-prefix", "Bar"
+    ]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Slide with No Label
+Put something interesting
+
+## Slide with Label {#MySlide}
+Something more interesting
+
+## Slide with Label and Class {#UltraSlide .vcenter}
+Yada yada
+
+## Just Class {.vcenter}
+Boo hoo hoo

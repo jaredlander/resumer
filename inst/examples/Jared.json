@@ -1,0 +1,114 @@
+{
+    "Name": "Jared P. Lander",
+    "Address": "contact@jaredlander.com",
+    "Education": [
+        {
+            "School": "Columbia University",
+            "GPA": 3.926,
+            "Degree": "Master of Arts in Statistics"
+        },
+        {
+            "School": "Muhlenberg College",
+            "GPA": 3.748,
+            "Degree": "Bachelor of Science in Mathematics, Business Administration Minor",
+            "Honors": [
+                "Magna Cum Laude",
+                "Honors in Mathematics",
+                "Deans List"
+            ],
+            "Awards": [
+                "The Robert W. and Edythe M. Mull Award for Excellence in Mathematics",
+                "Member of Pi Mu Epsilon, a national honorary mathematics society"
+            ]
+        }
+    ],
+    "Highlights": [
+        "Author of R for Everyone published by Addison Wesley",
+        "Adjunct Professor of Statistics at Columbia University",
+        "Organizer of NY Open Statistical Programming Meetup",
+        "Thesis on NYC pizza published by major news sites",
+        "Analyzed global survey by the World Health Organization",
+        "Served as statistician in Yangon, Myanmar"
+    ],
+    "Relevant Experience": [
+        {
+            "Job Name": "Lander Analytics",
+            "Company": "Lander Analytics",
+            "Title": "Chief Data Scientist",
+            "Start Date": {
+                "Year": 2011
+            },
+            "End Date": [
+                "Present"
+            ],
+            "Bullets": [
+                {
+                    "ID": 1,
+                    "Bullet": "Founded a boutique data science consulting business"
+                },
+                {
+                    "ID": 2,
+                    "Bullet": "Advise clients on proper models, algorithms, methods and software for their business needs"
+                },
+                {
+                    "ID": 3,
+                    "Bullet": "Conduct R, data mining and statistics training sessions"
+                },
+                {
+                    "ID": 4,
+                    "Bullet": "Analyze and report on data of all sizes"
+                }
+            ]
+        },
+        {
+            "Job Name": "Data Science Class",
+            "Company": "Columbia University",
+            "Title": "Adjunct Professor",
+            "Start Date": {
+                "Year": 2012
+            },
+            "End Date": [
+                "Present"
+            ],
+            "Bullets": [
+                {
+                    "ID": 1,
+                    "Bullet": "Designed a lab to teach computational statististics to data science students"
+                },
+                {
+                    "ID": 2,
+                    "Bullet": "Taught two sections a week to students from stats, journalism, business & sociology departments"
+                },
+                {
+                    "ID": 3,
+                    "Bullet": "Covered basic programming, modeling, data manipulation, machine learning, visualization and communication"
+                }
+            ]
+        },
+        {
+            "Job Name": "R Meetup",
+            "Company": "New York Open Statistical Programming Meetup",
+            "Title": "Organizer",
+            "Start Date": {
+                "Year": 2012
+            },
+            "End Date": [
+                "Present"
+            ],
+            "Bullets": [
+                {
+                    "ID": 1,
+                    "Bullet": "Publicize events, moderate host page and mailing list for group with over 6,100 members"
+                },
+                {
+                    "ID": 2,
+                    "Bullet": "Contact and coordinate compelling speakers for monthly meetings"
+                },
+                {
+                    "ID": 3,
+                    "Bullet": "Arrange meeting space and food for attendees"
+                }
+            ]
+        }
+    ]
+}

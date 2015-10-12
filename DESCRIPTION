@@ -7,3 +7,7 @@ Depends: R (>= 3.2.1)
 License: BSD_3_clause + file LICENSE
 LazyData: true
 ByteCompile: true
+URL: https://github.com/jaredlander/resumer
+BugReports: https://github.com/jaredlander/resumer/issues
+Suggests: testthat
+Imports: RSQLite
