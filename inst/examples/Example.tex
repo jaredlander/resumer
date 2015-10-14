@@ -1,20 +1,34 @@
-\documentclass{article}
-%\documentclass{resumer}
-
-\usepackage{parskip} % Remove paragraph indentation
-\pagestyle{empty} % Suppress page numbers
-\RequirePackage{titlesec}   % for formatting sections
+\documentclass{resumer}
+%\documentclass{article}
 
 \makeatletter
-\renewcommand{\subsection}[4]{\textbf{#1} \hfill #2 \\ \emph{#3} \hfill #4\smallskip}
+\renewcommand{\subsection}[4]{\textbf{#1} \hfill #2 \ifthenelse{\equal{#3}{}}{}{ \\ \emph{#3} \hfill #4}\\}
 \makeatother
 
 \makeatletter
 \renewcommand{\section}[1]{\underline{#1}\\}
 \makeatother
 
+\name{Jared P. Lander}
+\address{contact@jaredlander.com}
 
 \begin{document}
+
+\section{Education}
+\subsection{Columbia University}{2007--2009}{}{}
+GPA 3.926\\
+Master of Arts in Statistics
+
+\subsection{Muhlenberg College}{2000--2004}{}{}
+GPA 3.748\\
+Master of Arts in Statistics
+
+\section{Highlights}
+\begin{tabular}{l l}
+Author of \emph{R for Everyone} published by \textbf{Addison Wesley} & Adjunct Professor of Statistics at \textbf{Columbia University} \\
+Organizer of \textbf{NY Open Statistical Programming} Meetup &  Thesis on \textbf{NYC pizza} published by major news sites \\
+Analyzed global survey by the \textbf{World Health Organization} & Served as statistician in \textbf{Yangon, Myanmar} \\
+\end{tabular}
 
 \section{Relevant Experience}
 \subsection{Columbia University}{2012--Present}{Adjunct Professor}{New York, NY}
