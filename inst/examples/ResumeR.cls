@@ -6,7 +6,7 @@
 \usepackage{parskip} % Remove paragraph indentation
 \pagestyle{empty} % Suppress page numbers
 
-\RequirePackage{titlesec}   % for formatting sections
+%\RequirePackage{titlesec}   % for formatting sections
 
 \usepackage[left=0.5in,top=0.2in,right=0.5in,bottom=0.2in]{geometry} % Document margins
 

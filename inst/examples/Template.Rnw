@@ -1,0 +1,40 @@
+\documentclass{resume}
+
+\name{Jared P. Lander}
+\address{contact@jaredlander.com}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%    EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Education}
+{\bf Columbia University} \hfill {2007 - 2009} \\ 
+GPA 3.926 \\
+Master of Arts in Statistics \smallskip\\
+{\bf Muhlenberg College} \hfill {2000 - 2004} \\ 
+Cumulative GPA 3.748, Major GPA 3.788, Magna Cum Laude, Honors in Mathematics, Dean’s List \\
+Bachelor of Science in Mathematics, Business Administration Minor \\
+The Robert W. and Edythe M. Mull Award for Excellence in Mathematics \\
+Member of Pi Mu Epsilon, a national honorary mathematics society
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%    Highlights SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Highlights}
+    \begin{tabular}{l l}
+        Author of \emph{R for Everyone} published by \textbf{Addison Wesley} & Adjunct Professor of Statistics at \textbf{Columbia University} \\
+        Organizer of \textbf{NY Open Statistical Programming} Meetup &  Thesis on \textbf{NYC pizza} published by major news sites \\
+        Analyzed global survey by the \textbf{World Health Organization} & Served as statistician in \textbf{Yangon, Myanmar} \\
+    \end{tabular}
+\end{rSection}
+
+\begin{rSection}{Relevant Experience}
+\begin{rSubsection}{Lander Analytics}{2011--Present}{Chief Data Scientist}{New York, NY}
+    \item Founded Company
+    \item Built Empire
+\end{rSubsection}
+\end{rSection}
+
+\end{document}
