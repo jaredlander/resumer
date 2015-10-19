@@ -1,0 +1,35 @@
+\documentclass{resume}
+
+% title / author / date
+$if(name)$
+\name{$name$}
+$endif$
+$if(address)$
+\address{$address$}
+$endif$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+$for(education)$
+$if(education.school)$
+$education.school$$if(education.dates)$ \hfill $education.dates$ \\$endif$
+$else$
+$education$
+$endif$
+$endfor$
+
+$body$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+\end{document}
