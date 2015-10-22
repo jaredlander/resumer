@@ -4,17 +4,20 @@
 #' @export
 resumer <- function(fig_width = 4, fig_height = 2.5, fig_crop = TRUE, dev = 'pdf',
                     highlight = "default", keep_tex = FALSE, includes = NULL, md_extensions = NULL,
-                    pandoc_args = NULL)
+                    pandoc_args = NULL, template='default')
 {
     # resolve default highlight
     if (identical(highlight, "default"))
         highlight <- "pygments"
     
-    # get the tufte handlout template
-    template <-  system.file(
-        "rmarkdown/templates/resumer/resources/resumer.tex", 
-        package = "resumer"
-    )
+    if(identical(template, 'default'))
+    {
+        # get the resume template
+        template <-  system.file(
+            "rmarkdown/templates/resumer/resources/resumer.tex", 
+            package = "resumer"
+        )
+    }
     
     # call the base pdf_document format with the appropriate options
     rmarkdown::pdf_document(fig_width = fig_width,
