@@ -1,5 +1,5 @@
 \documentclass{resume}
-
+\usepackage{layouts}
 % title / author / date
 $if(name)$
 \name{$name$}
@@ -12,19 +12,67 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+% macro for highlighting code
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+% for vrb
+$if(verbatim-in-note)$
+\usepackage{fancyvrb}
+\VerbatimFootnotes
+$endif$
+% for tables
+$if(tables)$
+\usepackage{longtable,booktabs}
+$endif$
+% for graphics
+$if(graphics)$
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+$endif$
+
 \begin{document}
 
 $for(include-before)$
 $include-before$
 $endfor$
 
+\begin{rSection}{Education}
 $for(education)$
-$if(education.school)$
-$education.school$$if(education.dates)$ \hfill $education.dates$ \\$endif$
-$else$
-$education$
-$endif$
+    $if(education.school)$
+        {\bf $education.school$}$if(education.dates)$ \hfill {$education.dates$} \\$endif$
+    $else$
+        $education$
+    $endif$
+    $if(education.gpa)$
+        GPA $education.gpa$ \\
+    $endif$
+    $if(education.degree)$
+        $education.degree$ \\
+    $endif$
+    $if(education.notes)$
+        $education.notes$
+    $endif$$sep$\smallskip\\
 $endfor$
+\end{rSection}
+
+$if(doHighlights)$
+\begin{rSection}{Highlights}
+\begin{multicols}{2}
+$for(highlights)$
+$highlights.bullet$$sep$ \\
+$endfor$
+\end{multicols}
+\end{rSection}
+$endif$
 
 $body$
 
