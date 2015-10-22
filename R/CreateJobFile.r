@@ -5,13 +5,14 @@
 #' @export createJobFile
 #' @rdname createJobFile
 #' @param filename Name of file in which to create the csv
+#' @param Separator to use, ; is suggested
 #' @return An empty data.frame
 #' @examples 
 #' \dontrun{
 #'createJobFile() 
 #' }
 #' 
-createJobFile <- function(filename='Resume.csv')
+createJobFile <- function(filename='Resume.csv', sep=';')
 {
     if(file.exists(filename))
     {
@@ -22,7 +23,7 @@ createJobFile <- function(filename='Resume.csv')
                            Company=character(0), Title=character(0), 
                            Start=character(0), End=character(0), 
                            BulletName=character(0), Bullet=character(0), Type=character(0))
-    write.table(jobFrame, file=filename, sep=',', col.names=TRUE, row.names=FALSE, append=FALSE)
+    write.table(jobFrame, file=filename, sep=sep, col.names=TRUE, row.names=FALSE, append=FALSE)
     
     return(jobFrame)
 }
