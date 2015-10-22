@@ -1,0 +1,49 @@
+---
+name: "Jared Lander"
+address: "New York"
+output:
+    resumer::resumer:
+        template: "~/Consulting/resumer/inst/rmarkdown/templates/resumer/resources/resumer.tex"
+        keep_tex: true
+params:
+    JobFile: "~/Consulting/resumer/inst/examples/Simple.csv"
+education:
+-   school: "Columbia University"
+    dates: "2007--2009"
+    notes: |
+        GPA 3.926  
+        Master of Arts in Statistics
+-   school: "Muhlenberg College"
+    dates: "2000--2004"
+    notes: |
+        Cumulative GPA 3.748, Major GPA 3.788, Magna Cum Laude, Honors in Mathematics, Deans List  
+        Bachelor of Science in Mathematics, Business Administration Minor  
+        The Robert W. and Edythe M. Mull Award for Excellence in Mathematics  
+        Member of Pi Mu Epsilon, a national honorary mathematics society
+doHighlights: yes
+highlights:
+-   bullet: Author of \emph{R for Everyone} published by \textbf{Addison Wesley}
+-   bullet: Organizer of \textbf{NY Open Statistical Programming} Meetup
+-   bullet: Analyzed global survey by the \textbf{WHO}
+-   bullet: Adjunct Professor of Statistics at \textbf{Columbia University}
+-   bullet: Thesis on \textbf{NYC pizza} published by major news sites
+-   bullet: Served as statistician in \textbf{Yangon, Myanmar}
+---
+
+```{r list-jobs}
+# generate a list of lists of jobs that list the company name, job name and bullet name
+
+```
+
+```{r}
+jobs <- read.csv(params$JobFile, header=TRUE, sep=',', stringsAsFactors=FALSE)
+knitr::kable(head(jobs))
+```
+
+
+\begin{rSection}{Relevant Experience}
+\begin{rSubsection}{Lander Analytics}{2011--Present}{Chief Data Scientist}{New York, NY}
+    \item Founded Company
+    \item Built Empire
+\end{rSubsection}
+\end{rSection}
