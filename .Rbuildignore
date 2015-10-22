@@ -4,3 +4,4 @@
 ^\.Rprofile$
 ^README\.Rmd$
 ^README-.*\.png$
+^prep/
