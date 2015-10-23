@@ -26,6 +26,7 @@
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
 \usepackage{ifthen} % Required for ifthenelse statements
 \usepackage{multicol}
+\setlength{\multicolsep}{2.0pt plus 1.0pt minus 0.5pt}% 50% of original values
 
 \pagestyle{empty} % Suppress page numbers
 
