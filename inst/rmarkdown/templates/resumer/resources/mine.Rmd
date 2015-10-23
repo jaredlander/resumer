@@ -1,12 +1,12 @@
 ---
 name: "Jared Lander"
 address: "New York"
-output:
+output: 
     resumer::resumer:
         template: "~/Consulting/resumer/inst/rmarkdown/templates/resumer/resources/resumer.tex"
         keep_tex: true
 params:
-    JobFile: "~/Consulting/resumer/inst/examples/Simple.csv"
+    JobFile: "~/Consulting/resumer/inst/examples/Jobs.txt"
 education:
 -   school: "Columbia University"
     dates: "2007--2009"
@@ -30,20 +30,17 @@ highlights:
 -   bullet: Served as statistician in \textbf{Yangon, Myanmar}
 ---
 
-```{r list-jobs}
-# generate a list of lists of jobs that list the company name, job name and bullet name
-
+```{r list-jobs,echo=FALSE}
+# generate a list of lists of jobs that list the company name, job name and bullet namejobList <- list(
+jobList <- list(
+    list("Pied Piper", "Tech Startup", c(1, 3)),
+    list("Goliath National Bank", "Bank Intern", 1:3),
+    list("Surveyors Inc", "Survery Stats", 1:2)
+)
 ```
 
-```{r}
-jobs <- read.csv(params$JobFile, header=TRUE, sep=',', stringsAsFactors=FALSE)
-knitr::kable(head(jobs))
+```{r generatejob-section,results='asis',echo=FALSE}
+library(resumer)
+jobs <- read.table(params$JobFile, header=TRUE, sep=';', stringsAsFactors=FALSE)
+cat(generateSection(jobs, jobList))
 ```
-
-
-\begin{rSection}{Relevant Experience}
-\begin{rSubsection}{Lander Analytics}{2011--Present}{Chief Data Scientist}{New York, NY}
-    \item Founded Company
-    \item Built Empire
-\end{rSubsection}
-\end{rSection}
