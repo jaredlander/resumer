@@ -32,7 +32,6 @@ generateMultipleListings <- function(data, jobList, type='Job', specialChars='&'
         unlist
 }
 
-generateSection(jobs, jobList, specialChars='&')
 #' @title generateSection
 #' @description Generate an entire job/research section
 #' @details Given a jobs data.frame and a job list generate all the code needed for a jobs section
