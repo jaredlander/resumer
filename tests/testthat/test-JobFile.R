@@ -52,4 +52,4 @@ test_that('The resume file can be read', {
     expect_equal(names(newFileSep), colNames)
 })
 
-unlink(c('Resume.csv', fileName, withDifferentSep))
+unlink(c('Resume.csv', fileName, sepFileName))
