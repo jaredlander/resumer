@@ -17,6 +17,10 @@
 #' generateListing(oneJob)
 #' generateListing(oneJob, bullets=c(1, 3))
 #' 
+#' oneResearch <- jobs %>% filter(JobName=='Garfield Research', Company=='Hudson University')
+#' generateListing(oneResearch, bullets=4, type='Research')
+#' generateListing(oneResearch, bullets=4:5, type='Research')
+#' 
 generateListing <- function(data, bullets, type='Job', specialChars='&')
 {
     # select just the wanted bullets
@@ -24,6 +28,9 @@ generateListing <- function(data, bullets, type='Job', specialChars='&')
     {
         data <- data %>% filter(BulletName %in% bullets)
     }
+    
+    # only get the type we are looking for
+    data <- data %>% filter(Type==type)
     
     # get the information that is only needed once
     company <- data$Company[1]
@@ -47,10 +54,16 @@ generateListing <- function(data, bullets, type='Job', specialChars='&')
     if(type == 'Job')
     {
         type <- 'rSubsection'
+        
+        # build opening line for the job based on the company name, dates, title and location
+        opening <- sprintf("\\begin{%s}{%s}{%s}{%s}{%s}", type, company, dates, title, location)
+    } else
+    {
+        # build opening line for the job based on the company name, dates, title and location
+        opening <- sprintf("\\begin{%s}{%s}{%s}{%s}", type, company, data$Description[1], dates)
     }
     
-    # build opening line for the job based on the company name, dates, title and location
-    opening <- sprintf("\\begin{%s}{%s}{%s}{%s}{%s}", type, company, dates, title, location)
+    
     # build ending which is the same for all jobs
     ending <- sprintf("\\end{%s}", type)
     
