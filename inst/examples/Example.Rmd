@@ -1,10 +1,7 @@
 ---
 name: "Jared Lander"
 address: "New York"
-output: 
-    resumer::resumer:
-        template: "~/Consulting/resumer/inst/rmarkdown/templates/resumer/resources/resumer.tex"
-        keep_tex: true
+output: resumer::resumer
 params:
     JobFile: "~/Consulting/resumer/inst/examples/jobs.csv"
 education:
