@@ -43,7 +43,7 @@ generateListing <- function(data, bullets, type='Job', specialChars='&')
     jobStop <- data$End[1]
     
     # if the end date is not there, just use the start date, otherwise build both with a hyphen in between
-    if(is.na(jobStop))
+    if(is.na(jobStop) || jobStop == '')
     {
         dates <- jobStart
     }else
@@ -57,18 +57,23 @@ generateListing <- function(data, bullets, type='Job', specialChars='&')
         
         # build opening line for the job based on the company name, dates, title and location
         opening <- sprintf("\\begin{%s}{%s}{%s}{%s}{%s}", type, company, dates, title, location)
+        
+        # get all the bullets, prefixed with \item, sub out characters which cause trouble and unlist
+        points <- data %$% sprintf('\\item %s', Bullet) %>% useful::subSpecials(specialChars=specialChars) %>% unlist
+        
+        # build ending which is the same for all jobs
+        ending <- sprintf("\\end{%s}", 'rSubsection')
     } else
     {
         # build opening line for the job based on the company name, dates, title and location
-        opening <- sprintf("\\begin{%s}{%s}{%s}{%s}", type, company, data$Description[1], dates)
+        opening <- sprintf("\\begin{%s}{%s}{%s}{%s}", 'research', company, data$Description[1], dates)
+        
+        # get all the bullets, prefixed with \item, sub out characters which cause trouble and unlist
+        points <- data %$% sprintf('%s\n\n', Bullet) %>% useful::subSpecials(specialChars=specialChars) %>% unlist
+        
+        # build ending which is the same for all jobs
+        ending <- sprintf("\\end{%s}", 'research')
     }
-    
-    
-    # build ending which is the same for all jobs
-    ending <- sprintf("\\end{%s}", type)
-    
-    # get all the bullets, prefixed with \item, sub out characters which cause trouble and unlist
-    points <- data %$% sprintf('\\item %s', Bullet) %>% useful::subSpecials(specialChars=specialChars) %>% unlist
     
     paste(opening, paste(points, collapse="\n"), ending, sep="\n")
 }
