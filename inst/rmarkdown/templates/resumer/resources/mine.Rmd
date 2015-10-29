@@ -44,10 +44,22 @@ jobList <- list(
 )
 ```
 
+```{r list-research,echo=FALSE}
+# generate a list of lists of research that list the company name, job name and bullet
+researchList <- list(
+    list("Hudson University", "Garfield Research", 4:5),
+    list("Daily Planet", "Winning Article", 2)
+)
+```
+
 <!-- This should not be edited -->
-```{r generatejob-section,results='asis',echo=FALSE}
+```{r read-jobs,echo=FALSE}
 library(resumer)
 jobs <- read.csv2(params$JobFile, header=TRUE, sep=',', stringsAsFactors=FALSE)
+```
+
+<!-- This should not be edited -->
+```{r generatejob-section,results='asis',echo=FALSE,dependson=c('list-research', 'read-jobs')}
 cat(generateSection(jobs, jobList))
 ```
 
@@ -58,3 +70,9 @@ cat(generateSection(jobs, jobList))
 \textbf{Curling} \emph{Vice Skip} | \textbf{Hudson University} | 2000--2004
 \end{rSection}
 
+\clearpage
+<!-- research section -->
+```{r generate-research-section,results='asis',echo=FALSE,eval=TRUE,dependson=c('list-research','read-jobs')}
+#cat('\\clearpage')
+cat(generateSection(jobs, researchList, sectionName='Research Experience', type='Research'))
+```
