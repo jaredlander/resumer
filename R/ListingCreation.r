@@ -13,6 +13,7 @@
 #' @param specialChars Vector of characters that need to be double-backslashed escaped
 #' @return LaTeX code for a subsection in the resume
 #' @examples 
+#' library(dplyr)
 #' oneJob <- jobs %>% filter(JobName=='Pied Piper', Company=='Tech Central')
 #' generateListing(oneJob)
 #' generateListing(oneJob, bullets=c(1, 3))
