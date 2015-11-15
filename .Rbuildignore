@@ -4,3 +4,5 @@
 ^\.Rprofile$
 ^README\.Rmd$
 ^README-.*\.png$
+^prep/
+^\.travis\.yml$

@@ -1,4 +1,4 @@
-#' resumer.
+#' resumer
 #'
 #' @name resumer
 #' @docType package

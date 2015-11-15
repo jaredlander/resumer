@@ -1,0 +1,75 @@
+---
+name: "Jared Lander"
+address: "New York"
+output: resumer::resumer
+params:
+    JobFile: "~/Consulting/resumer/inst/examples/jobs.csv"
+education:
+-   school: "Hudson University"
+    dates: "2007--2009"
+    notes: |
+        GPA 3.955  
+        Master of Arts in Statistics
+-   school: "Smallville College"
+    dates: "2000--2004"
+    notes: |
+        Cumulative GPA 3.838 Summa Cum Laude, Honors in Mathematics  
+        Bachelor of Science in Mathematics, Journalism Minor  
+        The Wayne Award for Excellence in Mathematics  
+        Member of Pi Mu Epsilon, a national honorary mathematics society
+doHighlights: yes
+highlights:
+-   bullet: Author of \emph{Pulitzer Prize} winning article
+-   bullet: Organizer of \textbf{Glasses and Cowl} Meetup
+-   bullet: Analyzed global survey by the \textbf{Surveyors Inc}
+-   bullet: Professor of Journalism at \textbf{Hudson University}
+-   bullet: Thesis on \textbf{Facial Recognition Errors}
+-   bullet: Served as reporter in \textbf{Vientiane, Laos}
+---
+
+<!-- This block is where we enter information on jobs that should be included -->
+```{r list-jobs,echo=FALSE}
+# generate a list of lists of jobs that list the company name, job name and bullet namejobList <- list(
+jobList <- list(
+    list("Pied Piper", "Tech Startup", c(1, 3)),
+    list("Goliath National Bank", "Large Bank", 1:2),
+    list("Goliath National Bank", "Bank Intern", 1:3),
+    list("Surveyors Inc", "Survery Stats", 1:2),
+    list("Daily Planet", "Reporting", 2:4),
+    list("Hudson University", "Professor", c(1, 3:4)),
+    list("Hooli", "Coding Intern", c(1:3))
+)
+```
+
+```{r list-research,echo=FALSE}
+# generate a list of lists of research that list the company name, job name and bullet
+researchList <- list(
+    list("Hudson University", "Garfield Research", 4:5),
+    list("Daily Planet", "Winning Article", 2)
+)
+```
+
+<!-- This should not be edited -->
+```{r read-jobs,echo=FALSE}
+library(resumer)
+jobs <- read.csv2(params$JobFile, header=TRUE, sep=',', stringsAsFactors=FALSE)
+```
+
+<!-- This should not be edited -->
+```{r generatejob-section,results='asis',echo=FALSE,dependson=c('list-research', 'read-jobs')}
+cat(generateSection(jobs, jobList))
+```
+
+
+<!-- Custom LaTeX, such as an atheltics section can be used -->
+\begin{rSection}{Athletics}
+\textbf{Ice Hockey} \emph{Goaltender} | \textbf{Hudson University} | 2000--2004 \\
+\textbf{Curling} \emph{Vice Skip} | \textbf{Hudson University} | 2000--2004
+\end{rSection}
+
+\clearpage
+<!-- research section -->
+```{r generate-research-section,results='asis',echo=FALSE,eval=TRUE,dependson=c('list-research','read-jobs')}
+#cat('\\clearpage')
+cat(generateSection(jobs, researchList, sectionName='Research Experience', type='Research'))
+```

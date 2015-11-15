@@ -1,36 +1,28 @@
-8,7,Columbia University,Data Science Class,"New York, NY",Adjunct Professor,2012,Present,Designed a lab to teach computational statististics to data science students,1
-8,7,Columbia University,Data Science Class,"New York, NY",Adjunct Professor,2012,Present,"Taught two sections a week to students from stats, journalism, business & sociology departments",2
-8,7,Columbia University,Data Science Class,"New York, NY",Adjunct Professor,2012,Present,"Covered basic programming, modelling, data manipulation, machine learning, visualization and communication",3
-13,10,New York Open Statistical Programming Meetup,R Meetup,"New York, NY",Ogranizer,2012,Present,"Publicize events, moderate host page and mailing list for group with over 4,100 members",1
-13,10,New York Open Statistical Programming Meetup,R Meetup,"New York, NY",Ogranizer,2012,Present,Contact and coordinate compelling speakers for monthly meetings,2
-13,10,New York Open Statistical Programming Meetup,R Meetup,"New York, NY",Ogranizer,2012,Present,Arrange meeting space and food for attendees,3
-16,12,R for Everyone,R for Everyone,"New York, NY",Author,2011,Present,Author of R for Everyone,1
-2,2,Revolution Analytics,Revolution Consultant,"New York, NY",Data Scientist,2011,Present,Perform statistical analysis ranging from linear models to clustering to time series,1
-2,2,Revolution Analytics,Revolution Consultant,"New York, NY",Data Scientist,2011,Present,Support sales staff on scoping projects and deciphering client needs,2
-2,2,Revolution Analytics,Revolution Consultant,"New York, NY",Data Scientist,2011,Present,All work done in the R statistical programming language,3
-1,1,Lander Analytics,Lander Analytics,"New York, NY",Founder and CEO,2011,Present,Founded a boutique data science consulting business,1
-1,1,Lander Analytics,Lander Analytics,"New York, NY",Founder and CEO,2011,Present,"Advise clients on proper models, algorithms, methods and software for their business needs",2
-1,1,Lander Analytics,Lander Analytics,"New York, NY",Founder and CEO,2011,Present,Analyze and report on data of all sizes,3
-1,1,Lander Analytics,Lander Analytics,"New York, NY",Founder and CEO,2011,Present,"Conduct R, data mining and statistics training sessions",4
-1,1,Lander Analytics,Lander Analytics,"New York, NY",Founder and CEO,2011,Present,"Clients include investment banks, political campaigns, hospitals, NGOs, tech startups and food companies",5
-3,3,Bardess Group,Bardess Consultant,"New York, NY",Data Scientist,2008,Present,Designed rapid front end analysis of large datasets for company's clients,1
-3,3,Bardess Group,Bardess Consultant,"New York, NY",Data Scientist,2008,Present,Integrated the R statistical package into services generally built in QlikView,2
-3,3,Bardess Group,Bardess Consultant,"New York, NY",Data Scientist,2008,Present,Trained clients in using and developing with QlikView,3
-10,7,Columbia University,Garfield Research,"New York, NY",Statistician (under Dr. Andrew Garfield),2008,Present,Developed methods to reconcile death rolls in New Orleans resulting from Hurricane Katrina,1
-10,7,Columbia University,Garfield Research,"New York, NY",Statistician (under Dr. Andrew Garfield),2008,Present,Searched for patterns and structure in causes of death and victim characteristics,2
-10,7,Columbia University,Garfield Research,"New York, NY",Statistician (under Dr. Andrew Garfield),2008,Present,Developed methods to reduce the necessary sample size for disaster relief surveys,3
-9,7,Columbia University,Gelman Research,"New York, NY",Statistician (under Dr. Andy Gelman),2008,2009,Analyzed change in candidates? favorability caused by National Nominating Conventions from 1984 through 2004,1
-9,7,Columbia University,Gelman Research,"New York, NY",Statistician (under Dr. Andy Gelman),2008,2009,Examined Congressional candidate performance in comparison to Presidential candidate performance,2
-9,7,Columbia University,Gelman Research,"New York, NY",Statistician (under Dr. Andy Gelman),2008,2009,Investigated political bias in Congressional districting from 1896 to 2008,3
-11,8,Sky IT Group,SKY IT,"New York, NY",Senior Consultant,2006,2008,Managed a team of four people in developing numeric and graphical analysis utilizing data mining tools,1
-11,8,Sky IT Group,SKY IT,"New York, NY",Senior Consultant,2006,2008,Provided pre-sales expertise through demonstrations and proof-of-concepts,2
-4,4,World Health Organization,World Health Survey,"New York, NY",Statistician,2010,,Developed multilevel model of noncommunicable disease contraction in the developing world based on World Health Survey,1
-4,4,World Health Organization,World Health Survey,"New York, NY",Statistician,2010,,Analyzed data from the World Health Survey,2
-4,4,World Health Organization,World Health Survey,"New York, NY",Statistician,2010,,Designed visual display of statistical model allowing for easier understanding of the measured effects,3
-5,5,Association of Southeast Asian Nations,PR3,"Yangon, Myanmar",Statistician,2009,,Analyzed survey data from Periodic Review of Cyclone Nargis Recovery Efforts using SQL Server & R,1
-5,5,Association of Southeast Asian Nations,PR3,"Yangon, Myanmar",Statistician,2009,,Constructed indicators of well-being for GIS mapping,2
-5,5,Association of Southeast Asian Nations,PR3,"Yangon, Myanmar",Statistician,2009,,Led technical team in developing models and analysis for Lead Scientists,3
-7,6,Melinda Katz for Comptroller,Katz Comptroller,"New York, NY",Data Scientist,2009,,Developed statistical model to predict voter turnout in specific Election Districts,1
-7,6,Melinda Katz for Comptroller,Katz Comptroller,"New York, NY",Data Scientist,2009,,Provided technical expertise for Campaign Headquarter workers,2
-12,9,City of Hope Cancer Center,Fran Drescher,"New York, NY",Development Assistant,2006,,Tracked donations and their values and contributors in a database for charity auction honoring Fran Drescher,1
-12,9,City of Hope Cancer Center,Fran Drescher,"New York, NY",Development Assistant,2006,,"Event raised over $250,000 for cancer research",2
+JobName,Company,Location,Title,Start,End,Bullet,BulletName,Type,Description
+Tech Startup,Pied Piper,"New York, NY",CTO,2013,Present,Set up company's computing platform,1,Job,
+Tech Startup,Pied Piper,"New York, NY",CTO,2013,Present,Designed data strategy overseeing many datasources,2,Job,
+Tech Startup,Pied Piper,"New York, NY",CTO,2013,Present,Constructed statistical models for predictive analytics of big data,3,Job,
+Large Bank,Goliath National Bank,"New York, NY",Quant,2011,2013,Built quantitative models for derivatives trades,1,Job,
+Large Bank,Goliath National Bank,"New York, NY",Quant,2011,2013,Wrote algorithms using the R statistical programming language,2,Job,
+Bank Intern,Goliath National Bank,"New York, NY",Intern,2010,,Got coffee for senior staff,1,Job,
+Bank Intern,Goliath National Bank,"New York, NY",Intern,2010,,Killed time by pretending I was using Excel after finishing all work in R,2,Job,
+Bank Intern,Goliath National Bank,"New York, NY",Intern,2010,,Hung out on Stone Street drinking beer and eating pizza,3,Job,
+Survery Stats,Surveyors Inc,"Chicago, IL",Data Scientist,2008,2010,Analyzed survery data disimilar to the Census,1,Job,
+Survery Stats,Surveyors Inc,"Chicago, IL",Data Scientist,2008,2010,Ported Stata code to R code,2,Job,
+Survery Stats,Surveyors Inc,"Chicago, IL",Data Scientist,2008,2010,Drew histograms of questions,3,Job,
+Survery Stats,Surveyors Inc,"Chicago, IL",Data Scientist,2008,2010,Drew barplots of simple questions,4,Job,
+Survery Stats,Surveyors Inc,"Chicago, IL",Data Scientist,2008,2010,Fit one logistic model the whole time,5,Job,
+Reporting,Daily Planet,"New York, NY",Reporter,2006,2008,Mild mannered reporter covering world events,1,Job,
+Reporting,Daily Planet,"New York, NY",Reporter,2006,2008,Partnered with a Pulitzer Prize winning writer and a cub reporter,2,Job,
+Reporting,Daily Planet,"New York, NY",Reporter,2006,2008,Answered directly to the Editor-in-Chief,3,Job,
+Reporting,Daily Planet,"New York, NY",Reporter,2006,2008,Used this position to identify world events that needed mending,4,Job,
+Professor,Hudson University,"New York, NY",Professor,2011,Present,Taught class on using data in journalism,1,Job,
+Professor,Hudson University,"New York, NY",Professor,2011,Present,Encouraged hackathons and vigilante justice,2,Job,
+Professor,Hudson University,"New York, NY",Professor,2011,Present,Debunked myths about facial recognition in press photos,3,Job,
+Professor,Hudson University,"New York, NY",Professor,2011,Present,Built syllabus to encourage collaboration,4,Job,
+Coding Intern,Hooli,"San Fransisco, CA",Programmer,2004,2006,Worked on compression software projects,1,Job,
+Coding Intern,Hooli,"San Fransisco, CA",Programmer,2004,2006,Attained near-impossible Weissman Score for 3D compression,2,Job,
+Coding Intern,Hooli,"San Fransisco, CA",Programmer,2004,2006,Experience paved the path for Pied Piper years later,3,Job,
+Winning Article,Daily Planet,"New York, NY",Author,2008,,"Over the course of two years wrote an in-depth expose examining the need for Superman.  While I did not draw any conclusions it led many people to question their beholdence to a supernatural being from another planet.  Ultimately, however, most people agreed that Superman was indeed essential to the planet, even as just a beacon of hope.",2,Research,Does the World Need Superman?
+Garfield Research,Hudson University,"New York, NY",Statistician (under Dr. Andrew Garfield),2008,Present,"To reduce the time, cost and effort necessary to properly analyze a region affected by a natural or manmade disaster Dr. Richard Garfield and I worked on methods to show that smaller sample sizes can adequately provide the same information as larger sample sizes.  For our study we used data from the 2010 Pakistan floods that devastated large swathes of the country.  We compared varying samples sizes ranging from 5 tehsils (villages) in each province to full enumeration.  While the research is still ongoing we have so far demonstrated that as few as 10 tehsils per province is sufficient.  This should help improve future responses to disasters.",4,Research,Humanitarian Research
+Garfield Research,Hudson University,"New York, NY",Statistician (under Dr. Andrew Garfield),2008,Present,"I was engaged in statistical and analytic support to Dr. Garfield of Columbia’s School of Nursing and Dr. John Mutter from Columbia’s Earth Institute in their study of the socioeconomic, health and geographic factors affecting deaths in New Orleans following Hurricane Katrina. We are reconciling a self-reporting death list with an official State list that is thought to under represent Katrina related deaths. The goal is to determine what disparities, if any, resulted in a greater proportion of deaths among certain populations as opposed to others. The analysis will result in journal article preparation in in which I will be one of the authors.",5,Research,Health Sciences Research

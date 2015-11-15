@@ -1,0 +1,41 @@
+---
+name: Jared P. Lander
+address: New York
+output: resumer::resumer
+---
+
+```{r load-packages,echo=FALSE,message=FALSE,warning=FALSE}
+library(resumer)
+```
+
+
+```{r education,echo=FALSE}
+education <- list(
+    list(school='Columbia University', 
+         dates=c(2007, 2009), degree="Master of Arts in Statistics", gpa=3.926),
+    list(school='Muhlenberg College', 
+         dates=c(2000, 2004), 
+         degree="Bachelor of Science in Mathematics, Business Administration Minor", gpa=3.748)
+)
+```
+
+```{r highlights,echo=FALSE}
+highlights <- c("Author of \\emph{R for Everyone} published by \\textbf{Addison Wesley}",
+                "Adjunct Professor of Statistics at \\textbf{Columbia University}",
+                "Organizer of \\textbf{NY Open Statistical Programming} Meetup",
+                "Thesis on \\textbf{NYC pizza} published by major news sites",
+                "Analyzed global survey by the \\textbf{World Health Organization}",
+                "Served as statistician in \\textbf{Yangon, Myanmar}"
+)
+
+higher <- as.data.frame(matrix(highlights, ncol=2))
+knitr::kable(higher)
+```
+
+
+
+<!-- EDUCATION SECTION -->
+```{r fill-edu,echo=FALSE,results='asis'}
+cat(buildEducation(education))
+```
+

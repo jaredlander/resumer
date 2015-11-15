@@ -10,3 +10,6 @@ ByteCompile: true
 URL: https://github.com/jaredlander/resumer
 BugReports: https://github.com/jaredlander/resumer/issues
 Suggests: testthat
+Imports: useful,
+    dplyr,
+    magrittr

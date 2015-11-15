@@ -1,0 +1,4 @@
+name: ResumeR (PDF)
+description: >
+    Template for creating resumes from a csv
+create_dir: false
