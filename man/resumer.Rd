@@ -7,8 +7,9 @@
 \title{resumer}
 \usage{
 resumer(fig_width = 4, fig_height = 2.5, fig_crop = TRUE, dev = "pdf",
-  highlight = "default", keep_tex = FALSE, includes = NULL,
-  md_extensions = NULL, pandoc_args = NULL, template = "default")
+  highlight = "default", keep_tex = FALSE, latex_engine = "pdflatex",
+  includes = NULL, md_extensions = NULL, pandoc_args = NULL,
+  template = "default")
 }
 \arguments{
 \item{fig_width}{Default width (in inches) for figures}
@@ -25,6 +26,9 @@ resumer(fig_width = 4, fig_height = 2.5, fig_crop = TRUE, dev = "pdf",
 "zenburn", and "haddock". Pass \code{NULL} to prevent syntax highlighting.}
 
 \item{keep_tex}{Keep the intermediate tex file used in the conversion to PDF}
+
+\item{latex_engine}{LaTeX engine for producing PDF output. Options are
+"pdflatex", "lualatex", and "xelatex".}
 
 \item{includes}{Named list of additional content to include within the
 document (typically created using the \code{\link{includes}} function).}
