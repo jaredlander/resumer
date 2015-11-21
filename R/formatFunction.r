@@ -1,5 +1,14 @@
 #' @title resumer
-#' @inheritParams rmarkdown::pdf_document
+#' @description Convert to a resume
+#' 
+#' @inheritParams rmarkdown::html_document
+#' 
+#' @param fig_crop \code{TRUE} to automatically apply the \code{pdfcrop} utility (if available) to pdf figures
+#' @param dev Graphics device to use for figure output (defaults to pdf)
+#' @param highlight Syntax highlighting style. Supported styles include "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", and "haddock". Pass \code{NULL} to prevent syntax highlighting.
+#' @param keep_tex Keep the intermediate tex file used in the conversion to PDF
+#' @param latex_engine LaTeX engine for producing PDF output. Options are "pdflatex", "lualatex", and "xelatex".
+#' @param template Pandoc template to use for rendering. Pass "default" to use the resumer package default template; pass \code{NULL} to use pandoc's built-in template; pass a path to use a custom template that you've created.  See the documentation on \href{http://johnmacfarlane.net/pandoc/demo/example9/templates.html}{pandoc templates} for more details.
 #' 
 #' @export
 resumer <- function(fig_width = 4, fig_height = 2.5, fig_crop = TRUE, dev = 'pdf',
