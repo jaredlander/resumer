@@ -1,0 +1,28 @@
+JobName,Company,Location,Title,Start,End,Bullet,BulletName,Type,Description
+Tech Startup,Pied Piper,"New York, NY",CTO,2013,Present,Set up company's computing platform,1,Job,
+Tech Startup,Pied Piper,"New York, NY",CTO,2013,Present,Designed data strategy overseeing many datasources,2,Job,
+Tech Startup,Pied Piper,"New York, NY",CTO,2013,Present,Constructed statistical models for predictive analytics of big data,3,Job,
+Large Bank,Goliath National Bank,"New York, NY",Quant,2011,2013,Built quantitative models for derivatives trades,1,Job,
+Large Bank,Goliath National Bank,"New York, NY",Quant,2011,2013,Wrote algorithms using the R statistical programming language,2,Job,
+Bank Intern,Goliath National Bank,"New York, NY",Intern,2010,,Got coffee for senior staff,1,Job,
+Bank Intern,Goliath National Bank,"New York, NY",Intern,2010,,Killed time by pretending I was using Excel after finishing all work in R,2,Job,
+Bank Intern,Goliath National Bank,"New York, NY",Intern,2010,,Hung out on Stone Street drinking beer and eating pizza,3,Job,
+Survery Stats,Surveyors Inc,"Chicago, IL",Data Scientist,2008,2010,Analyzed survery data disimilar to the Census,1,Job,
+Survery Stats,Surveyors Inc,"Chicago, IL",Data Scientist,2008,2010,Ported Stata code to R code,2,Job,
+Survery Stats,Surveyors Inc,"Chicago, IL",Data Scientist,2008,2010,Drew histograms of questions,3,Job,
+Survery Stats,Surveyors Inc,"Chicago, IL",Data Scientist,2008,2010,Drew barplots of simple questions,4,Job,
+Survery Stats,Surveyors Inc,"Chicago, IL",Data Scientist,2008,2010,Fit one logistic model the whole time,5,Job,
+Reporting,Daily Planet,"New York, NY",Reporter,2006,2008,Mild mannered reporter covering world events,1,Job,
+Reporting,Daily Planet,"New York, NY",Reporter,2006,2008,Partnered with a Pulitzer Prize winning writer and a cub reporter,2,Job,
+Reporting,Daily Planet,"New York, NY",Reporter,2006,2008,Answered directly to the Editor-in-Chief,3,Job,
+Reporting,Daily Planet,"New York, NY",Reporter,2006,2008,Used this position to identify world events that needed mending,4,Job,
+Professor,Hudson University,"New York, NY",Professor,2011,Present,Taught class on using data in journalism,1,Job,
+Professor,Hudson University,"New York, NY",Professor,2011,Present,Encouraged hackathons and vigilante justice,2,Job,
+Professor,Hudson University,"New York, NY",Professor,2011,Present,Debunked myths about facial recognition in press photos,3,Job,
+Professor,Hudson University,"New York, NY",Professor,2011,Present,Built syllabus to encourage collaboration,4,Job,
+Coding Intern,Hooli,"San Fransisco, CA",Programmer,2004,2006,Worked on compression software projects,1,Job,
+Coding Intern,Hooli,"San Fransisco, CA",Programmer,2004,2006,Attained near-impossible Weissman Score for 3D compression,2,Job,
+Coding Intern,Hooli,"San Fransisco, CA",Programmer,2004,2006,Experience paved the path for Pied Piper years later,3,Job,
+Winning Article,Daily Planet,"New York, NY",Author,2008,,"Over the course of two years wrote an in-depth expose examining the need for Superman.  While I did not draw any conclusions it led many people to question their beholdence to a supernatural being from another planet.  Ultimately, however, most people agreed that Superman was indeed essential to the planet, even as just a beacon of hope.",2,Research,Does the World Need Superman?
+Oddie Research,Hudson University,"New York, NY",Statistician (under Dr. Andrew Garfield),2008,Present,"To reduce the time, cost and effort necessary to properly analyze a region affected by a natural or manmade disaster Dr. Richard Oddie and I worked on methods to show that smaller sample sizes can adequately provide the same information as larger sample sizes.  For our study we used data from the 2010 Pakistan floods that devastated large swathes of the country.  We compared varying samples sizes ranging from 5 tehsils (villages) in each province to full enumeration.  While the research is still ongoing we have so far demonstrated that as few as 10 tehsils per province is sufficient.  This should help improve future responses to disasters.",4,Research,Humanitarian Research
+Oddie Research,Hudson University,"New York, NY",Statistician (under Dr. Andrew Garfield),2008,Present,"I was engaged in statistical and analytic support to Dr. Oddie of Hudson's School of Nursing and Dr. John Nilla from Hudson's World Institute in their study of the socioeconomic, health and geographic factors affecting deaths in New Orleans following Hurricane Katrina. We are reconciling a self-reporting death list with an official State list that is thought to under represent Katrina related deaths. The goal is to determine what disparities, if any, resulted in a greater proportion of deaths among certain populations as opposed to others. The analysis will result in journal article preparation in in which I will be one of the authors.",5,Research,Health Sciences Research
