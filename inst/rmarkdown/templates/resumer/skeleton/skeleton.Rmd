@@ -44,7 +44,7 @@ jobList <- list(
 ```{r list-research,echo=FALSE}
 # generate a list of lists of research that list the company name, job name and bullet
 researchList <- list(
-    list("Hudson University", "Garfield Research", 4:5),
+    list("Hudson University", "Oddie Research", 4:5),
     list("Daily Planet", "Winning Article", 2)
 )
 ```
