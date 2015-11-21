@@ -12,4 +12,5 @@ BugReports: https://github.com/jaredlander/resumer/issues
 Suggests: testthat
 Imports: useful,
     dplyr,
-    magrittr
+    magrittr,
+    rmarkdown
