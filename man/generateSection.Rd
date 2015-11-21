@@ -28,6 +28,7 @@ Generate an entire job/research section
 Given a jobs data.frame and a job list generate all the code needed for a jobs section
 }
 \examples{
+data(jobs)
 jobList <- list(
      list("Pied Piper", "Tech Startup", c(1, 3)),
      list("Goliath National Bank", "Bank Intern", 1:3),

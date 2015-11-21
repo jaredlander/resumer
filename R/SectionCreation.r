@@ -43,6 +43,7 @@ generateMultipleListings <- function(data, jobList, type='Job', specialChars='&'
 #' @param sectionName Name to be printed at the top of the section
 #' @return All the text needed for a job section
 #' @examples 
+#' data(jobs)
 #' jobList <- list(
 #'      list("Pied Piper", "Tech Startup", c(1, 3)),
 #'      list("Goliath National Bank", "Bank Intern", 1:3),
