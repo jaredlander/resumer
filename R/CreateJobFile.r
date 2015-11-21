@@ -5,7 +5,7 @@
 #' @export createJobFile
 #' @rdname createJobFile
 #' @param filename Name of file in which to create the csv
-#' @param Separator to use, ; is suggested
+#' @param sep Separator to use, ; is suggested
 #' @return An empty data.frame
 #' @examples 
 #' \dontrun{
