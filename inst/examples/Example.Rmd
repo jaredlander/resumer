@@ -50,7 +50,7 @@ researchList <- list(
 ```
 
 <!-- This should not be edited -->
-```{r read-jobs,echo=FALSE}
+```{r read-jobs,echo=FALSE,message=FALSE}
 library(resumer)
 jobs <- read.csv2(params$JobFile, header=TRUE, sep=',', stringsAsFactors=FALSE)
 ```
