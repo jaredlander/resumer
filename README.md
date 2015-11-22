@@ -27,6 +27,23 @@ head(jobs)
 | Large Bank   | Goliath National Bank | New York, NY | Quant  |   2011| 2013    | Wrote algorithms using the R statistical programming language       |           2| Job  |             |
 | Bank Intern  | Goliath National Bank | New York, NY | Intern |   2010|         | Got coffee for senior staff                                         |           1| Job  |             |
 
+A helper function, `createJobFile`, creates a CSV with the correct headers.
+
+Each row represents a detail about a job. So a job may take multiple rows.
+
+The columns are:
+
+-   `JobName`: Name identifying this job. This is identifying information used when selecting which jobs to display.
+-   `Company`: Name of company.
+-   `Location`: Physical location of job.
+-   `Title`: Title held at job.
+-   `Start`: Start date of job, usually represented by a year.
+-   `End`: End date of job. This would ordinarily by a year, 'Present' or blank.
+-   `Bullet`: The detail about the job.
+-   `BulletName`: Identifier for this detail, used when selecting which details to display.
+-   `Type`: Should be either `Job` or `Research`.
+-   `Description`: Used for a quick blurb about research roles.
+
 Usage
 -----
 
@@ -34,7 +51,60 @@ In order to make this package as universal as possible it is designed for some i
 
 ### yaml header
 
-Here you put your name, address, the location of the jobs CSV, education information and any highlights.
+Here you put your name, address, the location of the jobs CSV, education information and any highlights. Remember, proper indenting is required for yaml.
+
+The `name` and `address` fields are self explanatory. `output` takes the form of `package::function` which for this package is `resumer::resumer`.
+
+The location of the jobs CSV is specified in the `JobFile` slot of the `params` entry. This should be the absolute path to the CSV.
+
+These would look like this.
+
+``` yaml
+---
+name: "Generic Name"
+address: "New York"
+output: resumer::resumer
+params:
+    JobFile: "examples/jobs.csv"
+---
+```
+
+Supplying education information is done as a list in the `education` entry, with each school containing slots for `school`, `dates` and optionally `notes`. Each slot of the list is started with a `-`. The `notes` slot starts with a `|` and each line (except the last line) must end with two spaces.
+
+For example:
+
+``` yaml
+education:
+-   school: "Hudson University"
+    dates: "2007--2009"
+    notes: |
+        GPA 3.955  
+        Master of Arts in Statistics
+-   school: "Smallville College"
+    dates: "2000--2004"
+    notes: |
+        Cumulative GPA 3.838 Summa Cum Laude, Honors in Mathematics  
+        Bachelor of Science in Mathematics, Journalism Minor  
+        The Wayne Award for Excellence in Mathematics  
+        Member of Pi Mu Epsilon, a national honorary mathematics society
+```
+
+Providing a `highlights` section and confirming that they should be displayed with \`doHighlights.
+
+Each `bullet` in the `highlights` entry should be a list slot started by `-`. For example.
+
+    doHighlights: yes
+    highlights:
+    -   bullet: Author of \emph{Pulitzer Prize} winning article
+    -   bullet: Organizer of \textbf{Glasses and Cowl} Meetup
+    -   bullet: Analyzed global survey by the \textbf{Surveyors Inc}
+    -   bullet: Professor of Journalism at \textbf{Hudson University}
+    -   bullet: Thesis on \textbf{Facial Recognition Errors}
+    -   bullet: Served as reporter in \textbf{Vientiane, Laos}
+
+The exact structure of the yaml section will change as tweaks are made to the underlying template.
+
+### R Code
 
 Resources
 ---------
