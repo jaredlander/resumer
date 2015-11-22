@@ -93,18 +93,68 @@ Providing a `highlights` section and confirming that they should be displayed wi
 
 Each `bullet` in the `highlights` entry should be a list slot started by `-`. For example.
 
-    doHighlights: yes
-    highlights:
-    -   bullet: Author of \emph{Pulitzer Prize} winning article
-    -   bullet: Organizer of \textbf{Glasses and Cowl} Meetup
-    -   bullet: Analyzed global survey by the \textbf{Surveyors Inc}
-    -   bullet: Professor of Journalism at \textbf{Hudson University}
-    -   bullet: Thesis on \textbf{Facial Recognition Errors}
-    -   bullet: Served as reporter in \textbf{Vientiane, Laos}
+``` yaml
+doHighlights: yes
+highlights:
+-   bullet: Author of \emph{Pulitzer Prize} winning article
+-   bullet: Organizer of \textbf{Glasses and Cowl} Meetup
+-   bullet: Analyzed global survey by the \textbf{Surveyors Inc}
+-   bullet: Professor of Journalism at \textbf{Hudson University}
+-   bullet: Thesis on \textbf{Facial Recognition Errors}
+-   bullet: Served as reporter in \textbf{Vientiane, Laos}
+```
 
 The exact structure of the yaml section will change as tweaks are made to the underlying template.
 
 ### R Code
+
+Jobs and details are selected for display by building a list of lists named `jobList`. Each inner list represents a job and should have three unnamed elements: - `CompanyName` - `JobName` - Vector of `BulletName`s
+
+An example is:
+
+``` r
+jobList <- list(
+    list("Pied Piper", "Tech Startup", c(1, 3)),
+    list("Goliath National Bank", "Large Bank", 1:2),
+    list("Goliath National Bank", "Bank Intern", 1:3),
+    list("Surveyors Inc", "Survery Stats", 1:2),
+    list("Daily Planet", "Reporting", 2:4),
+    list("Hudson University", "Professor", c(1, 3:4)),
+    list("Hooli", "Coding Intern", c(1:3))
+)
+```
+
+Research is specified similarly in `researchList`.
+
+``` r
+# generate a list of lists of research that list the company name, job name and bullet
+researchList <- list(
+    list("Hudson University", "Oddie Research", 4:5),
+    list("Daily Planet", "Winning Article", 2)
+)
+```
+
+The job file is read into the `jobs` variable using `read.csv2`.
+
+``` r
+library(resumer)
+jobs <- read.csv2(params$JobFile, header=TRUE, sep=',', stringsAsFactors=FALSE)
+```
+
+The jobs and details are written to LaTeX using a code chunk with `results='asis'`.
+
+Same with research details.
+
+### LaTeX
+
+Regular LaTeX code can be used, such as in specifying an athletics section. Note that this uses a special `rSection` environment.
+
+``` latex
+\begin{rSection}{Athletics}
+\textbf{Ice Hockey} \emph{Goaltender} | \textbf{Hudson University} | 2000--2004 \\
+\textbf{Curling} \emph{Vice Skip} | \textbf{Hudson University} | 2000--2004
+\end{rSection}
+```
 
 Resources
 ---------
