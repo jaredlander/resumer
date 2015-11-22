@@ -33,7 +33,7 @@ for additional details.}
 
 \item{pandoc_args}{Additional command line options to pass to pandoc}
 
-\item{template}{Pandoc template to use for rendering. Pass "default" to use the resumer package default template; pass \code{NULL} to use pandoc's built-in template; pass a path to use a custom template that you've created.  See the documentation on \href{http://johnmacfarlane.net/pandoc/demo/example9/templates.html}{pandoc templates} for more details.}
+\item{template}{Pandoc template to use for rendering. Pass "default" to use the resumer package default template; pass \code{NULL} to use pandoc's built-in template; pass a path to use a custom template that you've created.}
 }
 \description{
 Convert to a resume
