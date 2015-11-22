@@ -1,10 +1,10 @@
 context("Generate listing builds appropriate LaTeX code")
 
-oneJob <- jobs %>% filter(JobName=='Tech Startup', Company=='Pied Piper')
+oneJob <- jobs %>% dplyr::filter(JobName=='Tech Startup', Company=='Pied Piper')
 noBullets <- generateListing(oneJob)
 withBullets <- generateListing(oneJob, bullets=c(1, 3))
 
-oneResearch <- jobs %>% filter(JobName=='Garfield Research', Company=='Hudson University')
+oneResearch <- jobs %>% dplyr::filter(JobName=='Oddie Research', Company=='Hudson University')
 researchOne <- generateListing(oneResearch, bullets=4, type='Research')
 researchTwo <- generateListing(oneResearch, bullets=4:5, type='Research')
 

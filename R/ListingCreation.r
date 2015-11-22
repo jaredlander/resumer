@@ -4,8 +4,7 @@
 #' @author Jared P. Lander
 #' @export generateListing
 #' @rdname generateListing
-#' @importFrom magrittr "%$%"
-#' @importFrom dplyr filter "%>%"
+#' @importFrom dplyr filter_ "%>%"
 #' @seealso \code{link{generateMultipleListings}} \code{\link{generateSection}}
 #' @param data data.frame holding the info for one job
 #' @param bullets The BulletName's for the desired rows
@@ -18,7 +17,7 @@
 #' generateListing(oneJob)
 #' generateListing(oneJob, bullets=c(1, 3))
 #' 
-#' oneResearch <- jobs %>% filter(JobName=='Garfield Research', Company=='Hudson University')
+#' oneResearch <- jobs %>% filter(JobName=='Oddie Research', Company=='Hudson University')
 #' generateListing(oneResearch, bullets=4, type='Research')
 #' generateListing(oneResearch, bullets=4:5, type='Research')
 #' 
@@ -27,11 +26,11 @@ generateListing <- function(data, bullets, type='Job', specialChars='&')
     # select just the wanted bullets
     if(!missing(bullets))
     {
-        data <- data %>% filter(BulletName %in% bullets)
+        data <- data %>% filter_(~BulletName %in% bullets)
     }
     
     # only get the type we are looking for
-    data <- data %>% filter(Type==type)
+    data <- data %>% filter_(~Type==type)
     
     # get the information that is only needed once
     company <- data$Company[1]
@@ -60,7 +59,8 @@ generateListing <- function(data, bullets, type='Job', specialChars='&')
         opening <- sprintf("\\begin{%s}{%s}{%s}{%s}{%s}", type, company, dates, title, location)
         
         # get all the bullets, prefixed with \item, sub out characters which cause trouble and unlist
-        points <- data %$% sprintf('\\item %s', Bullet) %>% useful::subSpecials(specialChars=specialChars) %>% unlist
+        #points <- data %$% sprintf('\\item %s', Bullet) %>% useful::subSpecials(specialChars=specialChars) %>% unlist
+        points <- sprintf('\\item %s', data$Bullet) %>% useful::subSpecials(specialChars=specialChars) %>% unlist
         
         # build ending which is the same for all jobs
         ending <- sprintf("\\end{%s}", 'rSubsection')
@@ -70,7 +70,8 @@ generateListing <- function(data, bullets, type='Job', specialChars='&')
         opening <- sprintf("\\begin{%s}{%s}{%s}{%s}", 'research', company, data$Description[1], dates)
         
         # get all the bullets, prefixed with \item, sub out characters which cause trouble and unlist
-        points <- data %$% sprintf('%s\n\n', Bullet) %>% useful::subSpecials(specialChars=specialChars) %>% unlist
+        #points <- data %$% sprintf('%s\n\n', Bullet) %>% useful::subSpecials(specialChars=specialChars) %>% unlist
+        points <- sprintf('%s\n\n', data$Bullet) %>% useful::subSpecials(specialChars=specialChars) %>% unlist
         
         # build ending which is the same for all jobs
         ending <- sprintf("\\end{%s}", 'research')

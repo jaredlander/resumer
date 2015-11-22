@@ -4,7 +4,7 @@
 #' @author Jared P. Lander
 #' @export generateMultipleListings
 #' @rdname generateMultipleListings
-#' @importFrom dplyr "%>%"
+#' @importFrom dplyr "%>%" filter_
 #' @seealso \code{link{generateListings}} \code{\link{generateSection}}
 #' @param data data.frame holding the info for one job
 #' @param jobList A list of jobs, each of which is a list where the first element is the Company, the second is the JobName and the third is a vector of BulletName's
@@ -24,9 +24,9 @@ generateMultipleListings <- function(data, jobList, type='Job', specialChars='&'
 {
     lapply(jobList, 
            function(x){ 
-               data %>% 
-                   dplyr::filter(Company==x[[1]], JobName==x[[2]]) %>% 
-                   dplyr::do(Text=generateListing(., bullets=x[[3]], type=type, specialChars=specialChars)) 
+               data <- data %>% 
+                   dplyr::filter_(~Company==x[[1]], ~JobName==x[[2]])
+               generateListing(data, bullets=x[[3]], type=type, specialChars=specialChars)
            }
     ) %>% 
         unlist
