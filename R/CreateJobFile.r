@@ -12,7 +12,7 @@
 #'createJobFile() 
 #' }
 #' 
-createJobFile <- function(filename='Resume.csv', sep=';')
+createJobFile <- function(filename='Resume.csv', sep=',')
 {
     if(file.exists(filename))
     {

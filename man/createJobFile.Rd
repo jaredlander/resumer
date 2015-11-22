@@ -4,7 +4,7 @@
 \alias{createJobFile}
 \title{createJobFile}
 \usage{
-createJobFile(filename = "Resume.csv", sep = ";")
+createJobFile(filename = "Resume.csv", sep = ",")
 }
 \arguments{
 \item{filename}{Name of file in which to create the csv}
