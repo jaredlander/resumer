@@ -74,6 +74,7 @@ Supplying education information is done as a list in the `education` entry, with
 For example:
 
 ``` yaml
+---
 education:
 -   school: "Hudson University"
     dates: "2007--2009"
@@ -87,6 +88,7 @@ education:
         Bachelor of Science in Mathematics, Journalism Minor  
         The Wayne Award for Excellence in Mathematics  
         Member of Pi Mu Epsilon, a national honorary mathematics society
+---
 ```
 
 Providing a `highlights` section and confirming that they should be displayed with \`doHighlights.
@@ -94,6 +96,7 @@ Providing a `highlights` section and confirming that they should be displayed wi
 Each `bullet` in the `highlights` entry should be a list slot started by `-`. For example.
 
 ``` yaml
+---
 doHighlights: yes
 highlights:
 -   bullet: Author of \emph{Pulitzer Prize} winning article
@@ -102,6 +105,7 @@ highlights:
 -   bullet: Professor of Journalism at \textbf{Hudson University}
 -   bullet: Thesis on \textbf{Facial Recognition Errors}
 -   bullet: Served as reporter in \textbf{Vientiane, Laos}
+---
 ```
 
 The exact structure of the yaml section will change as tweaks are made to the underlying template.
