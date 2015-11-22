@@ -4,7 +4,37 @@
 resumer
 =======
 
-This package stores information for your CV in a database and compiles a nicely formatted LaTeX CV.
+This package stores information for your CV in a CSV and compiles a nicely formatted LaTeX CV.
+
+Data
+----
+
+Your jobs should be stored in a CSV with these names: JobName, Company, Location, Title, Start, End, Bullet, BulletName, Type, Description.
+
+An example file can be found in [`inst/examples/Jobs.csv`](https://github.com/jaredlander/resumer/blob/master/inst/examples/Jobs.csv) or by running
+
+``` r
+data(jobs)
+head(jobs)
+```
+
+| JobName      | Company               | Location     | Title  |  Start| End     | Bullet                                                              |  BulletName| Type | Description |
+|:-------------|:----------------------|:-------------|:-------|------:|:--------|:--------------------------------------------------------------------|-----------:|:-----|:------------|
+| Tech Startup | Pied Piper            | New York, NY | CTO    |   2013| Present | Set up company's computing platform                                 |           1| Job  |             |
+| Tech Startup | Pied Piper            | New York, NY | CTO    |   2013| Present | Designed data strategy overseeing many datasources                  |           2| Job  |             |
+| Tech Startup | Pied Piper            | New York, NY | CTO    |   2013| Present | Constructed statistical models for predictive analytics of big data |           3| Job  |             |
+| Large Bank   | Goliath National Bank | New York, NY | Quant  |   2011| 2013    | Built quantitative models for derivatives trades                    |           1| Job  |             |
+| Large Bank   | Goliath National Bank | New York, NY | Quant  |   2011| 2013    | Wrote algorithms using the R statistical programming language       |           2| Job  |             |
+| Bank Intern  | Goliath National Bank | New York, NY | Intern |   2010|         | Got coffee for senior staff                                         |           1| Job  |             |
+
+Usage
+-----
+
+In order to make this package as universal as possible it is designed for some information to be input in the yaml header and some in R code. Creating a new file using the template through RStudio will be easiest.
+
+### yaml header
+
+Here you put your name, address, the location of the jobs CSV, education information and any highlights.
 
 Resources
 ---------

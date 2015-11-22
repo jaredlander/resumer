@@ -13,6 +13,9 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 ```
+```{r load-data,echo=FALSE}
+data(jobs)
+```
 
 [![Travis-CI Build Status](https://travis-ci.org/jaredlander/resumer.svg?branch=master)](https://travis-ci.org/jaredlander/resumer)
 [![Coverage Status](https://img.shields.io/codecov/c/github/jaredlander/resumer/master.svg)](https://codecov.io/github/jaredlander/resumer?branch=master)
@@ -20,7 +23,29 @@ knitr::opts_chunk$set(
 
 # resumer
 
-This package stores information for your CV in a database and compiles a nicely formatted LaTeX CV.
+This package stores information for your CV in a CSV and compiles a nicely formatted LaTeX CV.
+
+## Data
+Your jobs should be stored in a CSV with these names:  `r names(jobs)`.
+
+An example file can be found in [`inst/examples/Jobs.csv`](https://github.com/jaredlander/resumer/blob/master/inst/examples/Jobs.csv) or by running
+
+```{r show-jobs,eval=FALSE}
+data(jobs)
+head(jobs)
+```
+
+```{r show-jobs-do,echo=FALSE}
+knitr::kable(head(jobs))
+```
+
+
+
+## Usage
+In order to make this package as universal as possible it is designed for some information to be input in the yaml header and some in R code.  Creating a new file using the template through RStudio will be easiest.
+
+### yaml header
+Here you put your name, address, the location of the jobs CSV, education information and any highlights.
 
 ## Resources
 
