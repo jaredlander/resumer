@@ -8,7 +8,7 @@
 #' @param highlight Syntax highlighting style. Supported styles include "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", and "haddock". Pass \code{NULL} to prevent syntax highlighting.
 #' @param keep_tex Keep the intermediate tex file used in the conversion to PDF
 #' @param latex_engine LaTeX engine for producing PDF output. Options are "pdflatex", "lualatex", and "xelatex".
-#' @param template Pandoc template to use for rendering. Pass "default" to use the resumer package default template; pass \code{NULL} to use pandoc's built-in template; pass a path to use a custom template that you've created.  See the documentation on \href{http://johnmacfarlane.net/pandoc/demo/example9/templates.html}{pandoc templates} for more details.
+#' @param template Pandoc template to use for rendering. Pass "default" to use the resumer package default template; pass \code{NULL} to use pandoc's built-in template; pass a path to use a custom template that you've created.
 #' 
 #' @export
 resumer <- function(fig_width = 4, fig_height = 2.5, fig_crop = TRUE, dev = 'pdf',
@@ -62,24 +62,39 @@ resumer <- function(fig_width = 4, fig_height = 2.5, fig_crop = TRUE, dev = 'pdf
     args <- c(args, rmarkdown::includes_to_pandoc_args(includes))
     args <- c(args, pandoc_args)
     saved_files_dir <- NULL
-    pre_processor <- function(metadata, input_file, runtime, 
-                              knit_meta, files_dir, output_dir) {
-        saved_files_dir <<- files_dir
-        if (identical(template, "default")) 
-            pdf_pre_processor(metadata, input_file, runtime, 
-                              knit_meta, files_dir, output_dir)
-        else invisible(NULL)
-    }
-    intermediates_generator <- function(original_input, encoding, 
-                                        intermediates_dir) {
-        intermediates <- copy_render_intermediates(original_input, 
-                                                   encoding, intermediates_dir, FALSE)
-        if (!is.null(saved_files_dir) && dir_exists(saved_files_dir)) {
-            file.copy(saved_files_dir, intermediates_dir, recursive = TRUE)
-            intermediates <- c(intermediates, list.files(path = file.path(intermediates_dir, 
-                                                                          basename(saved_files_dir)), all.files = TRUE, 
-                                                         recursive = TRUE, full.names = TRUE))
-        }
+    
+    # pre_processor <- function(metadata, input_file, runtime, knit_meta, files_dir, output_dir)
+    # {
+    #     saved_files_dir <<- files_dir
+    #     if (identical(template, "default")) 
+    #         pdf_pre_processor(metadata, input_file, runtime, knit_meta, files_dir, output_dir)
+    #     else invisible(NULL)
+    # }
+    
+    intermediates_generator <- function(original_input, encoding, intermediates_dir)
+    {
+        #intermediates <- copy_render_intermediates(original_input, encoding, intermediates_dir, FALSE)
+        # if (!is.null(saved_files_dir) && utils::file_test("-d", saved_files_dir)) {
+        #     file.copy(saved_files_dir, intermediates_dir, recursive = TRUE)
+        #     intermediates <- c(intermediates, list.files(path = file.path(intermediates_dir, 
+        #                                                                   basename(saved_files_dir)),
+        #                                                  all.files = TRUE, 
+        #                                                  recursive = TRUE, full.names = TRUE))
+        # }
+        intermediates <- c()
+        resources <- rmarkdown::find_external_resources(original_input, encoding)
+        dest_dir <- normalizePath(intermediates_dir, winslash = "/")
+        source_dir <- dirname(normalizePath(original_input, winslash = "/"))
+        skip_web <- FALSE
+        by(resources, seq_len(nrow(resources)), function(res) {
+            if (skip_web && res$web) 
+                return
+            dest <- file.path(dest_dir, res$path)
+            if (!file.exists(dirname(dest))) 
+                dir.create(dirname(dest), recursive = TRUE)
+            file.copy(file.path(source_dir, res$path), dest)
+            intermediates <<- c(intermediates, dest)
+        })
         intermediates
     }
     
@@ -89,13 +104,14 @@ resumer <- function(fig_width = 4, fig_height = 2.5, fig_crop = TRUE, dev = 'pdf
             unlink(classLoc)
         return(output_file)
     }
+    
     rmarkdown::output_format(knitr=rmarkdown::knitr_options_pdf(fig_width, fig_height, fig_crop, dev), 
                              pandoc=rmarkdown::pandoc_options(to="latex", 
                                                      #from=from_rmarkdown(fig_caption, md_extensions),
                                                      args=args, keep_tex = keep_tex
                              ), 
                              clean_supporting = !keep_tex, 
-                             pre_processor=pre_processor, 
+                             pre_processor=NULL, 
                              intermediates_generator=intermediates_generator, 
                              post_processor=post_processor
     )
