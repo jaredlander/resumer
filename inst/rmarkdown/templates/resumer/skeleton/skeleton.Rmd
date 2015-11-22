@@ -1,6 +1,6 @@
 ---
-name: "Jared Lander"
-address: "New York"
+name: "Generic Name"
+address: "New York, NY"
 output: resumer::resumer
 params:
     JobFile: "~/Consulting/resumer/inst/examples/jobs.csv"
