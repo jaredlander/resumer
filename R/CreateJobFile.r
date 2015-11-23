@@ -23,7 +23,7 @@ createJobFile <- function(filename='Resume.csv', sep=',')
                            Company=character(0), Title=character(0), 
                            Start=character(0), End=character(0), 
                            BulletName=character(0), Bullet=character(0), Type=character(0))
-    write.table(jobFrame, file=filename, sep=sep, col.names=TRUE, row.names=FALSE, append=FALSE)
+    utils::write.table(jobFrame, file=filename, sep=sep, col.names=TRUE, row.names=FALSE, append=FALSE)
     
     return(jobFrame)
 }
