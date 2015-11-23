@@ -1,5 +1,5 @@
 #' resumer
 #'
-#' @name resumer
+#' @name resumer-package
 #' @docType package
 NULL

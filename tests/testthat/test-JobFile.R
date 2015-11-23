@@ -39,8 +39,8 @@ test_that('The proper columns were created by createJobFile', {
 })
 
 test_that('The resume file can be read', {
-    defaultFile <- read.table('Resume.csv', header=TRUE, stringsAsFactors=FALSE, sep=';')
-    newFile <- read.table(fileName, header=TRUE, stringsAsFactors=FALSE, sep=';')
+    defaultFile <- read.table('Resume.csv', header=TRUE, stringsAsFactors=FALSE, sep=',')
+    newFile <- read.table(fileName, header=TRUE, stringsAsFactors=FALSE, sep=',')
     newFileSep <- read.table(sepFileName, header=TRUE, stringsAsFactors=FALSE, sep=sepWith)
     
     expect_equal(dim(defaultFile), c(0, 8))

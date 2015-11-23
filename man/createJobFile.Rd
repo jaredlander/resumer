@@ -4,12 +4,12 @@
 \alias{createJobFile}
 \title{createJobFile}
 \usage{
-createJobFile(filename = "Resume.csv", sep = ";")
+createJobFile(filename = "Resume.csv", sep = ",")
 }
 \arguments{
 \item{filename}{Name of file in which to create the csv}
 
-\item{Separator}{to use, ; is suggested}
+\item{sep}{Separator to use, ; is suggested}
 }
 \value{
 An empty data.frame

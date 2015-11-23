@@ -9,4 +9,8 @@ r_packages:
   - dplyr
 after_success:
   - Rscript -e 'covr::codecov()'
-  
+
+notifications:
+  slack:
+    rooms:
+      - jaredlander:JmKkasgndHisNTtc39uqw2E8#resumer
