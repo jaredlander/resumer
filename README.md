@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis-CI Build Status](https://travis-ci.org/jaredlander/resumer.svg?branch=master)](https://travis-ci.org/jaredlander/resumer) [![Coverage Status](https://img.shields.io/codecov/c/github/jaredlander/resumer/master.svg)](https://codecov.io/github/jaredlander/resumer?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/resumer)](http://cran.r-project.org/package=resumer) [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/resumer)](http://cran.rstudio.com/package=resumer)
+[![Travis-CI Build Status](https://travis-ci.org/jaredlander/resumer.svg?branch=master)](https://travis-ci.org/jaredlander/resumer) [![Coverage Status](https://img.shields.io/codecov/c/github/jaredlander/resumer/master.svg)](https://codecov.io/github/jaredlander/resumer?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/resumer)](http://cran.r-project.org/package=resumer)
 
 resumer
 =======
