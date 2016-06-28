@@ -2,6 +2,7 @@
 - local Windows 10 install R 3.3.1
 - local Windows 10 install R 3.3.0
 - ubuntu (on travis-ci), R latest version
+- local Windows 10 install R 3.4.0 (devel)
 
 Previous versions tested on with minimal differences to this version
 - local Windows 7 install, R 3.2.1
