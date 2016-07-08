@@ -2,6 +2,8 @@
 name: "Generic Name"
 address: "New York, NY"
 output: resumer::resumer
+params:
+    JobFile: "example"
 education:
 -   school: "Hudson University"
     dates: "2007--2009"
@@ -50,8 +52,13 @@ researchList <- list(
 <!-- This should not be edited -->
 ```{r read-jobs,echo=FALSE,message=FALSE}
 library(resumer)
+job_file_path <- `if`(
+    params$JobFile == "example",
+    system.file("examples/Jobs.csv", package = "resumer"),
+    params$JobFile
+)
 jobs <- read.csv2(
-  system.file("examples/Jobs.csv", package = "resumer"), 
+  system.file(job_file_path, package = "resumer"), 
   header=TRUE, sep=',', stringsAsFactors=FALSE)
 ```
 
