@@ -58,7 +58,7 @@ job_file_path <- `if`(
     params$JobFile
 )
 jobs <- read.csv2(
-  system.file(job_file_path, package = "resumer"), 
+  job_file_path, 
   header=TRUE, sep=',', stringsAsFactors=FALSE)
 ```
 
