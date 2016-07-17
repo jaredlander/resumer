@@ -3,7 +3,7 @@ name: "Generic Name"
 address: "New York, NY"
 output: resumer::resumer
 params:
-    JobFile: "~/Consulting/resumer/inst/examples/jobs.csv"
+    JobFile: !r system.file('examples/Jobs.csv', package='resumer')
 education:
 -   school: "Hudson University"
     dates: "2007--2009"
