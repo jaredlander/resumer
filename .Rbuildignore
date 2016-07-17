@@ -7,3 +7,4 @@
 ^prep/
 ^\.travis\.yml$
 ^cran-comments\.md$
+resume.cls

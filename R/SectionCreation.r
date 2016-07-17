@@ -5,7 +5,7 @@
 #' @export generateMultipleListings
 #' @rdname generateMultipleListings
 #' @importFrom dplyr "%>%" filter_
-#' @seealso \code{link{generateListings}} \code{\link{generateSection}}
+#' @seealso \code{\link{generateListings}} \code{\link{generateSection}}
 #' @param data data.frame holding the info for one job
 #' @param jobList A list of jobs, each of which is a list where the first element is the Company, the second is the JobName and the third is a vector of BulletName's
 #' @param type The type of section to build; defaults to 'Job', the other currently supported value is 'Research'
