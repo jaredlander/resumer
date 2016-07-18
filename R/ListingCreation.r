@@ -5,7 +5,7 @@
 #' @export generateListing
 #' @rdname generateListing
 #' @importFrom dplyr filter_ "%>%"
-#' @seealso \code{link{generateMultipleListings}} \code{\link{generateSection}}
+#' @seealso \code{\link{generateMultipleListings}} \code{\link{generateSection}}
 #' @param data data.frame holding the info for one job
 #' @param bullets The BulletName's for the desired rows
 #' @param type The type of subsection to build; defaults to 'Job', the other currently supported value is 'Research'

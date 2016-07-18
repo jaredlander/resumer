@@ -42,6 +42,6 @@ generateSection(jobs, jobList)
 Jared P. Lander
 }
 \seealso{
-\code{link{generateListings}} \code{\link{generateMultipleListings}}
+\code{\link{generateListing}} \code{\link{generateMultipleListings}}
 }
 

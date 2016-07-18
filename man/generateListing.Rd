@@ -39,6 +39,6 @@ generateListing(oneResearch, bullets=4:5, type='Research')
 Jared P. Lander
 }
 \seealso{
-\code{link{generateMultipleListings}} \code{\link{generateSection}}
+\code{\link{generateMultipleListings}} \code{\link{generateSection}}
 }
 
