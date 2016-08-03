@@ -1,6 +1,8 @@
+## Version 0.0.3
+Updated tests to account for latest version of `rmakrdown`
+
 ## Version 0.0.2
 Fixed default parameter for location of example jobs file
-Updated tests to account for latest version of `rmakrdown`
 
 ## Version 0.0.1
 - First build
