@@ -29,14 +29,14 @@ resumer <- function(fig_width = 4, fig_height = 2.5, fig_crop = TRUE, dev = 'pdf
         )
     }
     
-    classLoc <- file.path(getwd(), '/resume.cls')
+    classLoc <- file.path(getwd(), 'resume.cls')
     file.copy(
         from=system.file("rmarkdown/templates/resumer/resources/resume.cls", package = "resumer"), 
         to=classLoc
             #file.path(getwd(), 'resume.cls')
     )
     
-    #on.exit(unlink(classLoc), add=TRUE)
+    # on.exit(unlink(classLoc), add=TRUE)
     
     # call the base pdf_document format with the appropriate options
     # rmarkdown::pdf_document(fig_width = fig_width,
@@ -88,7 +88,7 @@ resumer <- function(fig_width = 4, fig_height = 2.5, fig_crop = TRUE, dev = 'pdf
         skip_web <- FALSE
         by(resources, seq_len(nrow(resources)), function(res) {
             if (skip_web && res$web) 
-                return
+                return()
             dest <- file.path(dest_dir, res$path)
             if (!file.exists(dirname(dest))) 
                 dir.create(dirname(dest), recursive = TRUE)
