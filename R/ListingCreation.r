@@ -4,7 +4,7 @@
 #' @author Jared P. Lander
 #' @export generateListing
 #' @rdname generateListing
-#' @importFrom dplyr filter_ "%>%"
+#' @importFrom dplyr "%>%"
 #' @seealso \code{\link{generateMultipleListings}} \code{\link{generateSection}}
 #' @param data data.frame holding the info for one job
 #' @param bullets The BulletName's for the desired rows
@@ -13,7 +13,9 @@
 #' @return LaTeX code for a subsection in the resume
 #' @examples 
 #' library(dplyr)
-#' oneJob <- jobs %>% filter(JobName=='Pied Piper', Company=='Tech Central')
+#' 
+#' jobs <- read.csv(system.file('examples/Jobs.csv', package='resumer'))
+#' oneJob <- jobs %>% filter(Company=='Pied Piper', JobName=='Tech Startup')
 #' generateListing(oneJob)
 #' generateListing(oneJob, bullets=c(1, 3))
 #' 
@@ -26,11 +28,11 @@ generateListing <- function(data, bullets, type='Job', specialChars='&')
     # select just the wanted bullets
     if(!missing(bullets))
     {
-        data <- data %>% filter_(~BulletName %in% bullets)
+        data <- data %>% dplyr::filter(BulletName %in% bullets)
     }
     
     # only get the type we are looking for
-    data <- data %>% filter_(~Type==type)
+    data <- data %>% dplyr::filter(Type==type)
     
     # get the information that is only needed once
     company <- data$Company[1]

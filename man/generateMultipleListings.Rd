@@ -34,10 +34,9 @@ jobList <- list(
 generateMultipleListings(jobs, jobList)
 
 }
-\author{
-Jared P. Lander
-}
 \seealso{
 \code{\link{generateListing}} \code{\link{generateSection}}
 }
-
+\author{
+Jared P. Lander
+}

@@ -4,15 +4,24 @@
 \alias{resumer}
 \title{resumer}
 \usage{
-resumer(fig_width = 4, fig_height = 2.5, fig_crop = TRUE, dev = "pdf",
-  highlight = "default", keep_tex = FALSE, latex_engine = "pdflatex",
-  includes = NULL, md_extensions = NULL, pandoc_args = NULL,
-  template = "default")
+resumer(
+  fig_width = 4,
+  fig_height = 2.5,
+  fig_crop = TRUE,
+  dev = "pdf",
+  highlight = "default",
+  keep_tex = FALSE,
+  latex_engine = "pdflatex",
+  includes = NULL,
+  md_extensions = NULL,
+  pandoc_args = NULL,
+  template = "default"
+)
 }
 \arguments{
 \item{fig_width}{Default width (in inches) for figures}
 
-\item{fig_height}{Default width (in inches) for figures}
+\item{fig_height}{Default height (in inches) for figures}
 
 \item{fig_crop}{\code{TRUE} to automatically apply the \code{pdfcrop} utility (if available) to pdf figures}
 
@@ -25,10 +34,10 @@ resumer(fig_width = 4, fig_height = 2.5, fig_crop = TRUE, dev = "pdf",
 \item{latex_engine}{LaTeX engine for producing PDF output. Options are "pdflatex", "lualatex", and "xelatex".}
 
 \item{includes}{Named list of additional content to include within the
-document (typically created using the \code{\link{includes}} function).}
+document (typically created using the \code{\link[rmarkdown]{includes}} function).}
 
 \item{md_extensions}{Markdown extensions to be added or removed from the
-default definition or R Markdown. See the \code{\link{rmarkdown_format}} for
+default definition or R Markdown. See the \code{\link[rmarkdown]{rmarkdown_format}} for
 additional details.}
 
 \item{pandoc_args}{Additional command line options to pass to pandoc}
@@ -38,4 +47,3 @@ additional details.}
 \description{
 Convert to a resume
 }
-

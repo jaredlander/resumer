@@ -1,3 +1,6 @@
+## Version 0.0.4
+Minor updates for newer versions of `dplyr`
+
 ## Version 0.0.3
 Updated tests to account for latest version of `rmakrdown`
 

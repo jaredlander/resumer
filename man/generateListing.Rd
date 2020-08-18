@@ -26,7 +26,9 @@ Given a subsetted dataset of just one job this generates LaTeX code.  Given jobn
 }
 \examples{
 library(dplyr)
-oneJob <- jobs \%>\% filter(JobName=='Pied Piper', Company=='Tech Central')
+
+jobs <- read.csv(system.file('examples/Jobs.csv', package='resumer'))
+oneJob <- jobs \%>\% filter(Company=='Pied Piper', JobName=='Tech Startup')
 generateListing(oneJob)
 generateListing(oneJob, bullets=c(1, 3))
 
@@ -35,10 +37,9 @@ generateListing(oneResearch, bullets=4, type='Research')
 generateListing(oneResearch, bullets=4:5, type='Research')
 
 }
-\author{
-Jared P. Lander
-}
 \seealso{
 \code{\link{generateMultipleListings}} \code{\link{generateSection}}
 }
-
+\author{
+Jared P. Lander
+}

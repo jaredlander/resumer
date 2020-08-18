@@ -4,7 +4,3 @@
 \name{resumer-package}
 \alias{resumer-package}
 \title{resumer}
-\description{
-resumer
-}
-

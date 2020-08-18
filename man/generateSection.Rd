@@ -4,8 +4,13 @@
 \alias{generateSection}
 \title{generateSection}
 \usage{
-generateSection(data, jobList, sectionName = "Relevant Experience",
-  type = "Job", specialChars = "&")
+generateSection(
+  data,
+  jobList,
+  sectionName = "Relevant Experience",
+  type = "Job",
+  specialChars = "&"
+)
 }
 \arguments{
 \item{data}{data.frame holding the info for one job}
@@ -38,10 +43,9 @@ jobList <- list(
 generateSection(jobs, jobList)
 
 }
-\author{
-Jared P. Lander
-}
 \seealso{
 \code{\link{generateListing}} \code{\link{generateMultipleListings}}
 }
-
+\author{
+Jared P. Lander
+}

@@ -1,6 +1,6 @@
 Package: resumer
 Title: Build Resumes with R
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: person("Jared", "Lander", email = "packages@jaredlander.com", role = c("aut", "cre"))
 Description: Using a database, LaTeX and R easily build attractive resumes.
 Depends:
@@ -16,4 +16,4 @@ Imports:
     useful,
     dplyr,
     rmarkdown
-RoxygenNote: 5.0.1
+RoxygenNote: 7.1.1
