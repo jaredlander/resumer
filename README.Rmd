@@ -17,15 +17,19 @@ knitr::opts_chunk$set(
 data(jobs)
 ```
 
+<!-- badges: start -->
+  [![R build status](https://github.com/jaredlander/resumer/workflows/R-CMD-check/badge.svg)](https://github.com/jaredlander/resumer/actions)
 [![Coverage Status](https://img.shields.io/codecov/c/github/jaredlander/resumer/master.svg)](https://codecov.io/github/jaredlander/resumer?branch=master)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/resumer)](https://cran.r-project.org/package=resumer)
 [![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/resumer)](https://cran.r-project.org/package=resumer)
+<!-- badges: end -->
 
 # resumer
 
 This package stores information for your CV in a CSV and compiles a nicely formatted LaTeX CV.
 
 ## Data
+
 Your jobs should be stored in a CSV with these names:  `r names(jobs)`.
 
 An example file can be found in [`inst/examples/Jobs.csv`](https://github.com/jaredlander/resumer/blob/master/inst/examples/Jobs.csv) or by running
@@ -57,9 +61,11 @@ The columns are:
 - `Description`: Used for a quick blurb about research roles.
 
 ## Usage
+
 In order to make this package as universal as possible it is designed for some information to be input in the yaml header and some in R code.  Creating a new file using the template through RStudio will be easiest.
 
 ### yaml header
+
 Here you put your name, address, the location of the jobs CSV, education information and any highlights.  Remember, proper indenting is required for yaml.
 
 The `name` and `address` fields are self explanatory.  `output` takes the form of `package::function` which for this package is `resumer::resumer`.
@@ -119,12 +125,14 @@ highlights:
 The exact structure of the yaml section will change as tweaks are made to the underlying template.
 
 ### R Code
+
 Jobs and details are selected for display by building a list of lists named `jobList`.  Each inner list represents a job and should have three unnamed elements:
 - `CompanyName`
 - `JobName`
 - Vector of `BulletName`s
 
 An example is:
+
 ```{r list-jobs,eval=FALSE}
 jobList <- list(
     list("Pied Piper", "Tech Startup", c(1, 3)),
@@ -138,6 +146,7 @@ jobList <- list(
 ```
 
 Research is specified similarly in `researchList`.
+
 ```{r list-research,eval=FALSE}
 # generate a list of lists of research that list the company name, job name and bullet
 researchList <- list(
@@ -159,12 +168,14 @@ cat(generateSection(jobs, jobList))
 ```
 
 Same with research details.
+
 ```{r generate-research-section,results='asis',echo=FALSE,eval=TRUE,dependson=c('list-research','read-jobs'),eval=FALSE}
 #cat('\\clearpage')
 cat(generateSection(jobs, researchList, sectionName='Research Experience', type='Research'))
 ```
 
 ### LaTeX
+
 Regular LaTeX code can be used, such as in specifying an athletics section.  Note that this uses a special `rSection` environment.
 
 ```LaTeX
@@ -177,10 +188,11 @@ Regular LaTeX code can be used, such as in specifying an athletics section.  Not
 ## Resources
 
 ### LaTeX Templates
-- https://www.sharelatex.com/blog/2011/03/27/how-to-write-a-latex-class-file-and-design-your-own-cv.html
+
+- https://www.overleaf.com/learn/latex/How_to_write_a_LaTeX_class_file_and_design_your_own_CV_(Part_1)
 
 ### Pandoc
-- http://pandoc.org/scripting.html
-- http://pandoc.org/README.html#header-identifiers-in-html-latex-and-context
+
+- https://pandoc.org/
+- https://pandoc.org/MANUAL.html#heading-identifiers
 - https://github.com/jgm/pandocfilters/blob/master/pandocfilters.py
-- http://galahad.well.ox.ac.uk/repro/#latex-output

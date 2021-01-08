@@ -1,10 +1,14 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
 
+[![R build
+status](https://github.com/jaredlander/resumer/workflows/R-CMD-check/badge.svg)](https://github.com/jaredlander/resumer/actions)
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/jaredlander/resumer/master.svg)](https://codecov.io/github/jaredlander/resumer?branch=master)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/resumer)](https://cran.r-project.org/package=resumer)
 [![Downloads from the RStudio CRAN
 mirror](https://cranlogs.r-pkg.org/badges/resumer)](https://cran.r-project.org/package=resumer)
+<!-- badges: end -->
 
 # resumer
 
@@ -193,11 +197,10 @@ section. Note that this uses a special `rSection` environment.
 
 ### LaTeX Templates
 
--   <https://www.sharelatex.com/blog/2011/03/27/how-to-write-a-latex-class-file-and-design-your-own-cv.html>
+-   <https://www.overleaf.com/learn/latex/How_to_write_a_LaTeX_class_file_and_design_your_own_CV_(Part_1)>
 
 ### Pandoc
 
--   <http://pandoc.org/scripting.html>
--   <http://pandoc.org/README.html#header-identifiers-in-html-latex-and-context>
+-   <https://pandoc.org/>
+-   <https://pandoc.org/MANUAL.html#heading-identifiers>
 -   <https://github.com/jgm/pandocfilters/blob/master/pandocfilters.py>
--   <http://galahad.well.ox.ac.uk/repro/#latex-output>

@@ -5,7 +5,7 @@
 ^README\.Rmd$
 ^README-.*\.png$
 ^prep/
-^\.travis\.yml$
 ^cran-comments\.md$
 resume.cls
 ^CRAN-RELEASE$
+^\.github$
