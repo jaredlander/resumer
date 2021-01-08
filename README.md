@@ -1,61 +1,79 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis-CI Build Status](https://travis-ci.org/jaredlander/resumer.svg?branch=master)](https://travis-ci.org/jaredlander/resumer) [![Coverage Status](https://img.shields.io/codecov/c/github/jaredlander/resumer/master.svg)](https://codecov.io/github/jaredlander/resumer?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/resumer)](http://cran.r-project.org/package=resumer) [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/resumer)](https://cran.r-project.org/package=resumer)
 
-resumer
-=======
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/jaredlander/resumer/master.svg)](https://codecov.io/github/jaredlander/resumer?branch=master)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/resumer)](https://cran.r-project.org/package=resumer)
+[![Downloads from the RStudio CRAN
+mirror](https://cranlogs.r-pkg.org/badges/resumer)](https://cran.r-project.org/package=resumer)
 
-This package stores information for your CV in a CSV and compiles a nicely formatted LaTeX CV.
+# resumer
 
-Data
-----
+This package stores information for your CV in a CSV and compiles a
+nicely formatted LaTeX CV.
 
-Your jobs should be stored in a CSV with these names: JobName, Company, Location, Title, Start, End, Bullet, BulletName, Type, Description.
+## Data
 
-An example file can be found in [`inst/examples/Jobs.csv`](https://github.com/jaredlander/resumer/blob/master/inst/examples/Jobs.csv) or by running
+Your jobs should be stored in a CSV with these names: JobName, Company,
+Location, Title, Start, End, Bullet, BulletName, Type, Description.
+
+An example file can be found in
+[`inst/examples/Jobs.csv`](https://github.com/jaredlander/resumer/blob/master/inst/examples/Jobs.csv)
+or by running
 
 ``` r
 data(jobs)
 head(jobs)
 ```
 
-| JobName      | Company               | Location     | Title  |  Start| End     | Bullet                                                              |  BulletName| Type | Description |
+| JobName      | Company               | Location     | Title  | Start | End     | Bullet                                                              | BulletName | Type | Description |
 |:-------------|:----------------------|:-------------|:-------|------:|:--------|:--------------------------------------------------------------------|-----------:|:-----|:------------|
-| Tech Startup | Pied Piper            | New York, NY | CTO    |   2013| Present | Set up company's computing platform                                 |           1| Job  |             |
-| Tech Startup | Pied Piper            | New York, NY | CTO    |   2013| Present | Designed data strategy overseeing many datasources                  |           2| Job  |             |
-| Tech Startup | Pied Piper            | New York, NY | CTO    |   2013| Present | Constructed statistical models for predictive analytics of big data |           3| Job  |             |
-| Large Bank   | Goliath National Bank | New York, NY | Quant  |   2011| 2013    | Built quantitative models for derivatives trades                    |           1| Job  |             |
-| Large Bank   | Goliath National Bank | New York, NY | Quant  |   2011| 2013    | Wrote algorithms using the R statistical programming language       |           2| Job  |             |
-| Bank Intern  | Goliath National Bank | New York, NY | Intern |   2010|         | Got coffee for senior staff                                         |           1| Job  |             |
+| Tech Startup | Pied Piper            | New York, NY | CTO    |  2013 | Present | Set up company’s computing platform                                 |          1 | Job  |             |
+| Tech Startup | Pied Piper            | New York, NY | CTO    |  2013 | Present | Designed data strategy overseeing many datasources                  |          2 | Job  |             |
+| Tech Startup | Pied Piper            | New York, NY | CTO    |  2013 | Present | Constructed statistical models for predictive analytics of big data |          3 | Job  |             |
+| Large Bank   | Goliath National Bank | New York, NY | Quant  |  2011 | 2013    | Built quantitative models for derivatives trades                    |          1 | Job  |             |
+| Large Bank   | Goliath National Bank | New York, NY | Quant  |  2011 | 2013    | Wrote algorithms using the R statistical programming language       |          2 | Job  |             |
+| Bank Intern  | Goliath National Bank | New York, NY | Intern |  2010 |         | Got coffee for senior staff                                         |          1 | Job  |             |
 
-A helper function, `createJobFile`, creates a CSV with the correct headers.
+A helper function, `createJobFile`, creates a CSV with the correct
+headers.
 
-Each row represents a detail about a job. So a job may take multiple rows.
+Each row represents a detail about a job. So a job may take multiple
+rows.
 
 The columns are:
 
--   `JobName`: Name identifying this job. This is identifying information used when selecting which jobs to display.
+-   `JobName`: Name identifying this job. This is identifying
+    information used when selecting which jobs to display.
 -   `Company`: Name of company.
 -   `Location`: Physical location of job.
 -   `Title`: Title held at job.
 -   `Start`: Start date of job, usually represented by a year.
--   `End`: End date of job. This would ordinarily by a year, 'Present' or blank.
+-   `End`: End date of job. This would ordinarily by a year, ‘Present’
+    or blank.
 -   `Bullet`: The detail about the job.
--   `BulletName`: Identifier for this detail, used when selecting which details to display.
+-   `BulletName`: Identifier for this detail, used when selecting which
+    details to display.
 -   `Type`: Should be either `Job` or `Research`.
 -   `Description`: Used for a quick blurb about research roles.
 
-Usage
------
+## Usage
 
-In order to make this package as universal as possible it is designed for some information to be input in the yaml header and some in R code. Creating a new file using the template through RStudio will be easiest.
+In order to make this package as universal as possible it is designed
+for some information to be input in the yaml header and some in R code.
+Creating a new file using the template through RStudio will be easiest.
 
 ### yaml header
 
-Here you put your name, address, the location of the jobs CSV, education information and any highlights. Remember, proper indenting is required for yaml.
+Here you put your name, address, the location of the jobs CSV, education
+information and any highlights. Remember, proper indenting is required
+for yaml.
 
-The `name` and `address` fields are self explanatory. `output` takes the form of `package::function` which for this package is `resumer::resumer`.
+The `name` and `address` fields are self explanatory. `output` takes the
+form of `package::function` which for this package is
+`resumer::resumer`.
 
-The location of the jobs CSV is specified in the `JobFile` slot of the `params` entry. This should be the absolute path to the CSV.
+The location of the jobs CSV is specified in the `JobFile` slot of the
+`params` entry. This should be the absolute path to the CSV.
 
 These would look like this.
 
@@ -69,7 +87,11 @@ params:
 ---
 ```
 
-Supplying education information is done as a list in the `education` entry, with each school containing slots for `school`, `dates` and optionally `notes`. Each slot of the list is started with a `-`. The `notes` slot starts with a `|` and each line (except the last line) must end with two spaces.
+Supplying education information is done as a list in the `education`
+entry, with each school containing slots for `school`, `dates` and
+optionally `notes`. Each slot of the list is started with a `-`. The
+`notes` slot starts with a `|` and each line (except the last line) must
+end with two spaces.
 
 For example:
 
@@ -91,9 +113,11 @@ education:
 ---
 ```
 
-Providing a `highlights` section and confirming that they should be displayed with \`doHighlights.
+Providing a `highlights` section and confirming that they should be
+displayed with \`doHighlights.
 
-Each `bullet` in the `highlights` entry should be a list slot started by `-`. For example.
+Each `bullet` in the `highlights` entry should be a list slot started by
+`-`. For example.
 
 ``` yaml
 ---
@@ -108,11 +132,14 @@ highlights:
 ---
 ```
 
-The exact structure of the yaml section will change as tweaks are made to the underlying template.
+The exact structure of the yaml section will change as tweaks are made
+to the underlying template.
 
 ### R Code
 
-Jobs and details are selected for display by building a list of lists named `jobList`. Each inner list represents a job and should have three unnamed elements: - `CompanyName` - `JobName` - Vector of `BulletName`s
+Jobs and details are selected for display by building a list of lists
+named `jobList`. Each inner list represents a job and should have three
+unnamed elements: - `CompanyName` - `JobName` - Vector of `BulletName`s
 
 An example is:
 
@@ -145,13 +172,15 @@ library(resumer)
 jobs <- read.csv2(params$JobFile, header=TRUE, sep=',', stringsAsFactors=FALSE)
 ```
 
-The jobs and details are written to LaTeX using a code chunk with `results='asis'`.
+The jobs and details are written to LaTeX using a code chunk with
+`results='asis'`.
 
 Same with research details.
 
 ### LaTeX
 
-Regular LaTeX code can be used, such as in specifying an athletics section. Note that this uses a special `rSection` environment.
+Regular LaTeX code can be used, such as in specifying an athletics
+section. Note that this uses a special `rSection` environment.
 
 ``` latex
 \begin{rSection}{Athletics}
@@ -160,8 +189,7 @@ Regular LaTeX code can be used, such as in specifying an athletics section. Note
 \end{rSection}
 ```
 
-Resources
----------
+## Resources
 
 ### LaTeX Templates
 
