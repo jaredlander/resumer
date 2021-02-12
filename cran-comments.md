@@ -1,5 +1,10 @@
 ## Test environments
+
 - local Windows 10 install, R 4.0.3
+- Windows-latest, r-release
+- macOS-latest, r-release
+- ubuntu-20.04, r-release
+- ubuntu-20.04, r-devel
 
 Previous versions tested on with minimal differences to this version
 - local Windows 10 install, R 3.3.0

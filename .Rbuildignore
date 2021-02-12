@@ -6,6 +6,5 @@
 ^README-.*\.png$
 ^prep/
 ^cran-comments\.md$
-resume.cls
 ^CRAN-RELEASE$
 ^\.github$
