@@ -1,7 +1,12 @@
 Package: resumer
 Title: Build Resumes with R
-Version: 0.0.4
-Authors@R: person("Jared", "Lander", email = "packages@jaredlander.com", role = c("aut", "cre"))
+Version: 0.0.5
+Authors@R: 
+    person(given = "Jared",
+           family = "Lander",
+           role = c("aut", "cre"),
+           email = "packages@jaredlander.com",
+           comment = c(ORCID = "0000-0002-7291-726X"))
 Description: Using a CSV, LaTeX and R to easily build attractive resumes.
 Depends:
     R (>= 3.2.1)
